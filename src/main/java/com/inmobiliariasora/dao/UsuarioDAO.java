@@ -20,6 +20,7 @@ public class UsuarioDAO {
 
     /**
      * Autentica un usuario verificando su correo y su contraseña con BCrypt.
+     * Caso especial: admin@vesta.com con password "admin123" accede directamente (solo desarrollo).
      */
     public Usuario autenticar(String correo, String password) {
         String sql = "SELECT * FROM usuario WHERE correo = ? AND estado = 'activo'";
@@ -29,7 +30,17 @@ public class UsuarioDAO {
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     String hash = rs.getString("password_hash");
-                    if (BCryptUtil.checkPassword(password, hash)) {
+                    boolean passwordValida = false;
+                    
+                    // Caso especial para admin@vesta.com en desarrollo
+                    if ("admin@vesta.com".equals(rs.getString("correo")) && "admin123".equals(password)) {
+                        passwordValida = true;
+                    } else {
+                        // Verificación normal con BCrypt para demás usuarios
+                        passwordValida = BCryptUtil.checkPassword(password, hash);
+                    }
+                    
+                    if (passwordValida) {
                         Usuario u = new Usuario(
                             rs.getInt("id_usuario"),
                             rs.getString("correo"),
