@@ -63,8 +63,8 @@
                             <i class="bi bi-lightning-charge-fill text-warning"></i> Accesos Rápidos de Prueba
                         </div>
                         <div class="d-grid gap-2">
-                            <button class="btn btn-sm btn-outline-vesta text-start" onclick="fillLogin('admin@sora.com', 'admin123')">
-                                <strong>Admin:</strong> admin@sora.com / <code>admin123</code>
+                            <button class="btn btn-sm btn-outline-vesta text-start" onclick="fillLogin('admin@vesta.com', 'admin123')">
+                                <strong>Admin:</strong> admin@vesta.com / <code>admin123</code>
                             </button>
                             <button class="btn btn-sm btn-outline-vesta text-start" onclick="fillLogin('carlos@inmobiliaria.com', 'inmobiliaria123')">
                                 <strong>Inmobiliaria:</strong> carlos@inmobiliaria.com / <code>inmobiliaria123</code>

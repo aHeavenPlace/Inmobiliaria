@@ -1,5 +1,5 @@
 -- ============================================
--- INMOBILIARIA SORA - Script DML
+-- VESTA INMOBILIARIA - Script DML
 -- Sprint 1 - Datos de Prueba
 -- ============================================
 
@@ -42,7 +42,7 @@ INSERT INTO rol (nombre, descripcion) VALUES
 
 -- Usuarios (contraseñas: admin123, inmobiliaria123, cliente123)
 INSERT INTO usuario (correo, password_hash, estado, ultimo_acceso) VALUES
-('admin@sora.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'activo', CURRENT_TIMESTAMP),
+('admin@vesta.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'activo', CURRENT_TIMESTAMP),
 ('carlos@inmobiliaria.com', '$2a$10$EqKcp1WFKAr3Bo8M3YR6N.XGFt3Ei9HGBOQmW7fjBHvJ9gZdL5mKy', 'activo', CURRENT_TIMESTAMP - INTERVAL '1 day'),
 ('maria@inmobiliaria.com', '$2a$10$EqKcp1WFKAr3Bo8M3YR6N.XGFt3Ei9HGBOQmW7fjBHvJ9gZdL5mKy', 'activo', CURRENT_TIMESTAMP - INTERVAL '2 days'),
 ('pedro@inmobiliaria.com', '$2a$10$EqKcp1WFKAr3Bo8M3YR6N.XGFt3Ei9HGBOQmW7fjBHvJ9gZdL5mKy', 'activo', CURRENT_TIMESTAMP - INTERVAL '3 days'),
@@ -90,7 +90,7 @@ INSERT INTO perfil (id_usuario, nombres, apellidos, documento, telefono, direcci
 
 -- Inmobiliarias
 INSERT INTO inmobiliaria (nombre, nit, telefono, correo_contacto, direccion, logo_url, estado) VALUES
-('Inmobiliaria Sora SAS', '900.123.456-7', '6071234567', 'contacto@sora.com', 'Carrera 15 #27-30, Bucaramanga', 'https://i.pravatar.cc/150?u=sora', 'activo'),
+('Vesta Inmobiliaria SAS', '900.123.456-7', '6071234567', 'contacto@vesta.com', 'Carrera 15 #27-30, Bucaramanga', 'https://i.pravatar.cc/150?u=vesta', 'activo'),
 ('Hogar Verde Inmobiliaria', '900.234.567-8', '6072345678', 'info@hogarverde.com', 'Calle 45 #20-15, Bucaramanga', 'https://i.pravatar.cc/150?u=hv', 'activo'),
 ('Casa Propia Inmobiliaria', '900.345.678-9', '6073456789', 'ventas@casapropia.com', 'Av. Quebrada Seca #32-10, Bucaramanga', 'https://i.pravatar.cc/150?u=cp', 'activo');
 
