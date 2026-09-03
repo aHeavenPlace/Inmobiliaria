@@ -4,14 +4,14 @@
     <jsp:param name="pageTitle" value="Catálogo de Inmuebles | Inmobiliaria Sora"/>
 </jsp:include>
 
-<div class="bg-primary text-white py-4 mb-4">
+<div class="vesta-header-section py-5 mb-5">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <div>
-                <h1 class="h3 fw-bold mb-1">Catálogo de Inmuebles</h1>
-                <p class="small text-secondary mb-0">Explora propiedades verificadas disponibles para venta y arriendo en Colombia</p>
+                <h1 class="h3 fw-bold mb-1 text-charcoal">Catálogo de Inmuebles</h1>
+                <p class="small text-terracotta-muted mb-0" style="font-weight: 500;">Explora propiedades verificadas disponibles para venta y arriendo en Colombia</p>
             </div>
-            <span class="badge bg-light text-dark px-3 py-2 rounded-pill fw-semibold">
+            <span class="badge vesta-badge px-3 py-2 rounded-pill fw-semibold">
                 ${propiedades.size()} propiedades encontradas
             </span>
         </div>

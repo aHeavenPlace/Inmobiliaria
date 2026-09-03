@@ -797,3 +797,28 @@ a:hover {
 .muted {
     opacity: 0.8;
 }
+
+/* ==========================================================================
+   CATALOGO HEADER SECTION - VESTA STYLE
+   ========================================================================== */
+.vesta-header-section {
+    background-color: var(--bg-surface-subtle);
+    border-radius: var(--radius-lg);
+    padding: 40px 30px;
+    border: 1px solid var(--border-subtle);
+}
+
+.text-charcoal {
+    color: var(--color-primary) !important;
+}
+
+.text-terracotta-muted {
+    color: #A67C6B !important;
+}
+
+.vesta-badge {
+    background: linear-gradient(135deg, rgba(196, 121, 107, 0.1), rgba(184, 149, 107, 0.1));
+    color: var(--color-accent) !important;
+    border: 1px solid rgba(196, 121, 107, 0.2);
+    font-weight: 600;
+}
