@@ -1,0 +1,26 @@
+# Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven Wrapper (mantener scripts, ignorar descarga binaria)
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.eclipse/
+.settings/
+.project
+.classpath
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
