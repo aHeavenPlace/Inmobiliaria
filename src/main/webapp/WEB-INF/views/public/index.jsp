@@ -1,18 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Inmobiliaria Sora | Inmuebles Exclusivos en Colombia"/>
+    <jsp:param name="pageTitle" value="Vesta | Inmuebles Exclusivos en Colombia"/>
 </jsp:include>
 
 <!-- Hero Section -->
 <section class="hero-section">
     <div class="container">
-        <span class="badge bg-white text-dark px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
-            <i class="bi bi-stars text-warning me-1"></i> Experiencia Inmobiliaria de Alto Nivel
+        <span class="badge bg-white text-dark px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm" style="background: rgba(255,255,255,0.95) !important;">
+            <i class="bi bi-stars" style="color: var(--color-gold);"></i> Experiencia Inmobiliaria Premium
         </span>
-        <h1 class="hero-title">Encuentra el hogar o espacio ideal<br>con total confianza y distinción</h1>
+        <h1 class="hero-title">Encuentra el hogar o espacio ideal<br>con elegancia y confianza absoluta</h1>
         <p class="hero-subtitle">
-            Explora una cuidada selección de casas, apartamentos, locales y oficinas en las principales ciudades de Colombia.
+            Explora una colección curada de casas, apartamentos, locales y oficinas en las ciudades más exclusivas de Colombia.
         </p>
     </div>
 </section>
@@ -22,7 +22,7 @@
     <div class="search-card-float">
         <form action="${pageContext.request.contextPath}/catalogo" method="GET" class="row g-3 align-items-end">
             <div class="col-lg-3 col-md-6">
-                <label class="form-label-sora"><i class="bi bi-geo-alt me-1 text-primary"></i> Ciudad</label>
+                <label class="form-label-sora"><i class="bi bi-geo-alt me-1"></i> Ciudad</label>
                 <select name="ciudad" class="form-select form-select-sora">
                     <option value="">Todas las ciudades</option>
                     <c:forEach var="c" items="${ciudades}">
@@ -32,7 +32,7 @@
             </div>
 
             <div class="col-lg-3 col-md-6">
-                <label class="form-label-sora"><i class="bi bi-building me-1 text-primary"></i> Tipo de Inmueble</label>
+                <label class="form-label-sora"><i class="bi bi-building me-1"></i> Tipo de Inmueble</label>
                 <select name="tipo" class="form-select form-select-sora">
                     <option value="">Todos los tipos</option>
                     <c:forEach var="t" items="${tiposPropiedad}">
@@ -42,7 +42,7 @@
             </div>
 
             <div class="col-lg-2 col-md-6">
-                <label class="form-label-sora"><i class="bi bi-arrow-left-right me-1 text-primary"></i> Operación</label>
+                <label class="form-label-sora"><i class="bi bi-arrow-left-right me-1"></i> Operación</label>
                 <select name="operacion" class="form-select form-select-sora">
                     <option value="todos">Venta y Arriendo</option>
                     <option value="venta">Venta</option>
@@ -51,7 +51,7 @@
             </div>
 
             <div class="col-lg-2 col-md-6">
-                <label class="form-label-sora"><i class="bi bi-cash me-1 text-primary"></i> Precio Máx ($)</label>
+                <label class="form-label-sora"><i class="bi bi-cash me-1"></i> Precio Máx ($)</label>
                 <input type="number" name="precio" class="form-control form-control-sora" placeholder="Ej: 500000000" step="10000000">
             </div>
 
@@ -69,8 +69,8 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-end mb-4">
             <div>
-                <span class="text-uppercase fw-bold text-muted small letter-spacing-1">Portafolio Selecto</span>
-                <h2 class="fw-bold text-primary mb-0">Propiedades Destacadas</h2>
+                <span class="text-uppercase fw-bold" style="color: var(--text-muted); font-size: 0.75rem; letter-spacing: 1.2px;">Portafolio Selecto</span>
+                <h2 class="fw-bold mb-0" style="color: var(--color-primary);">Propiedades Destacadas</h2>
             </div>
             <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-sora-outline d-none d-md-inline-flex">
                 Ver Todo el Catálogo <i class="bi bi-arrow-right"></i>
@@ -98,7 +98,7 @@
                                 <a href="${pageContext.request.contextPath}/propiedad?id=${p.idPropiedad}">${p.titulo}</a>
                             </h3>
                             <div class="property-location">
-                                <i class="bi bi-geo-alt-fill text-danger"></i>
+                                <i class="bi bi-geo-alt-fill" style="color: var(--status-danger);"></i>
                                 <span>${p.direccion}, ${p.ciudadNombre}</span>
                             </div>
 
@@ -118,7 +118,7 @@
                             </div>
 
                             <div class="pt-3 mt-2 d-flex justify-content-between align-items-center">
-                                <small class="text-muted"><i class="bi bi-building"></i> ${p.inmobiliariaNombre}</small>
+                                <small style="color: var(--text-muted);"><i class="bi bi-building"></i> ${p.inmobiliariaNombre}</small>
                                 <a href="${pageContext.request.contextPath}/propiedad?id=${p.idPropiedad}" class="btn btn-sm btn-sora-outline">
                                     Ver Detalle
                                 </a>
@@ -138,49 +138,49 @@
 </section>
 
 <!-- Sección de Servicios y Valor Agregado -->
-<section class="py-5 bg-white border-top border-bottom border-light">
+<section class="py-5" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container py-4">
         <div class="text-center mb-5">
-            <span class="text-uppercase fw-bold text-muted small">Nuestros Servicios</span>
-            <h2 class="fw-bold text-primary">¿Por qué confiar en Inmobiliaria Sora?</h2>
-            <p class="text-muted max-w-lg mx-auto" style="max-width: 600px;">
-                Combinamos asesoría legal rigurosa, tecnología ágil de agendamiento y la mayor visibilidad en el mercado nacional.
+            <span class="text-uppercase fw-bold" style="color: var(--text-muted); font-size: 0.75rem; letter-spacing: 1.2px;">Nuestros Servicios</span>
+            <h2 class="fw-bold mb-3" style="color: var(--color-primary);">¿Por qué elegir Vesta?</h2>
+            <p class="text-muted mx-auto" style="max-width: 600px; color: var(--text-muted);">
+                Combinamos asesoría experta, tecnología premium y la mayor visibilidad en el mercado inmobiliario nacional.
             </p>
         </div>
 
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
-                <div class="p-4 rounded-4 bg-light border border-light h-100">
+                <div class="p-4 h-100" style="background: var(--bg-body); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
                     <div class="stat-icon-wrap stat-icon-blue mb-3">
                         <i class="bi bi-shield-check"></i>
                     </div>
-                    <h5 class="fw-bold text-primary">Seguridad Jurídica Total</h5>
-                    <p class="text-muted mb-0">
-                        Validación estricta de matrículas inmobiliarias, certificados de tradición y libertad y antecedentes para transacciones 100% transparentes.
+                    <h5 class="fw-bold mb-2" style="color: var(--color-primary);">Seguridad Jurídica Total</h5>
+                    <p class="mb-0" style="color: var(--text-muted); font-size: 0.93rem;">
+                        Validación rigurosa de matrículas inmobiliarias, certificados de tradición y libertad para transacciones 100% transparentes.
                     </p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="p-4 rounded-4 bg-light border border-light h-100">
+                <div class="p-4 h-100" style="background: var(--bg-body); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
                     <div class="stat-icon-wrap stat-icon-green mb-3">
                         <i class="bi bi-calendar2-check"></i>
                     </div>
-                    <h5 class="fw-bold text-primary">Agendamiento Inmediato</h5>
-                    <p class="text-muted mb-0">
-                        Programa visitas presenciales en tiempo real con agentes certificados, recibiendo confirmación y seguimiento desde tu panel personal.
+                    <h5 class="fw-bold mb-2" style="color: var(--color-primary);">Agendamiento Inmediato</h5>
+                    <p class="mb-0" style="color: var(--text-muted); font-size: 0.93rem;">
+                        Programa visitas presenciales en tiempo real con agentes certificados, recibiendo confirmación desde tu panel personal.
                     </p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="p-4 rounded-4 bg-light border border-light h-100">
+                <div class="p-4 h-100" style="background: var(--bg-body); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
                     <div class="stat-icon-wrap stat-icon-amber mb-3">
                         <i class="bi bi-file-earmark-lock"></i>
                     </div>
-                    <h5 class="fw-bold text-primary">Radicación Digital de Documentos</h5>
-                    <p class="text-muted mb-0">
-                        Presenta solicitudes de arriendo o compraventa cargando tus documentos en formato digital con cifrado y seguimiento en timeline interactivo.
+                    <h5 class="fw-bold mb-2" style="color: var(--color-primary);">Radicación Digital</h5>
+                    <p class="mb-0" style="color: var(--text-muted); font-size: 0.93rem;">
+                        Presenta solicitudes cargando tus documentos en formato digital con cifrado y seguimiento en tiempo real.
                     </p>
                 </div>
             </div>
@@ -192,60 +192,60 @@
 <section class="py-5">
     <div class="container py-4">
         <div class="text-center mb-5">
-            <span class="text-uppercase fw-bold text-muted small">Experiencias Reales</span>
-            <h2 class="fw-bold text-primary">Lo que opinan nuestros clientes</h2>
+            <span class="text-uppercase fw-bold" style="color: var(--text-muted); font-size: 0.75rem; letter-spacing: 1.2px;">Experiencias Reales</span>
+            <h2 class="fw-bold mb-3" style="color: var(--color-primary);">Lo que opinan nuestros clientes</h2>
         </div>
 
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
-                <div class="p-4 rounded-4 bg-white border border-light shadow-sm h-100 d-flex flex-column">
-                    <div class="text-warning mb-3">
+                <div class="p-4 h-100 d-flex flex-column" style="background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
+                    <div class="mb-3" style="color: var(--color-gold);">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
-                    <p class="text-muted fst-italic flex-grow-1">
-                        "El proceso de arrendar mi apartamento en Cabecera fue impecable. Pude radicar mis documentos en línea y en 48 horas ya tenía la aprobación."
+                    <p class="fst-italic flex-grow-1 mb-3" style="color: var(--text-muted);">
+                        "El proceso de arrendar mi apartamento fue impecable. Pude radicar mis documentos en línea y en 48 horas ya tenía la aprobación."
                     </p>
-                    <div class="d-flex align-items-center gap-3 pt-3 border-top border-light">
-                        <img src="https://i.pravatar.cc/150?u=juan" alt="Juan Pérez" class="rounded-circle" width="44" height="44">
+                    <div class="d-flex align-items-center gap-3 pt-3" style="border-top: 1px solid var(--border-subtle);">
+                        <img src="https://i.pravatar.cc/150?u=juan" alt="Juan Pérez" class="rounded-circle" width="44" height="44" style="object-fit: cover; border: 2px solid var(--color-accent-light);">
                         <div>
-                            <h6 class="fw-bold mb-0">Juan Pérez</h6>
-                            <small class="text-muted">Comprador en Bucaramanga</small>
+                            <h6 class="fw-bold mb-0" style="color: var(--color-primary);">Juan Pérez</h6>
+                            <small style="color: var(--text-muted);">Comprador en Bucaramanga</small>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="p-4 rounded-4 bg-white border border-light shadow-sm h-100 d-flex flex-column">
-                    <div class="text-warning mb-3">
+                <div class="p-4 h-100 d-flex flex-column" style="background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
+                    <div class="mb-3" style="color: var(--color-gold);">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
-                    <p class="text-muted fst-italic flex-grow-1">
-                        "Excelente plataforma. La galería fotográfica es fiel a la realidad y el agente respondió todas nuestras inquietudes en la visita."
+                    <p class="fst-italic flex-grow-1 mb-3" style="color: var(--text-muted);">
+                        "Excelente plataforma. La galería fotográfica es fiel a la realidad y el agente respondió todas nuestras inquietudes."
                     </p>
-                    <div class="d-flex align-items-center gap-3 pt-3 border-top border-light">
-                        <img src="https://i.pravatar.cc/150?u=ana" alt="Ana López" class="rounded-circle" width="44" height="44">
+                    <div class="d-flex align-items-center gap-3 pt-3" style="border-top: 1px solid var(--border-subtle);">
+                        <img src="https://i.pravatar.cc/150?u=ana" alt="Ana López" class="rounded-circle" width="44" height="44" style="object-fit: cover; border: 2px solid var(--color-accent-light);">
                         <div>
-                            <h6 class="fw-bold mb-0">Ana López</h6>
-                            <small class="text-muted">Inversionista en Floridablanca</small>
+                            <h6 class="fw-bold mb-0" style="color: var(--color-primary);">Ana López</h6>
+                            <small style="color: var(--text-muted);">Inversionista en Floridablanca</small>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="p-4 rounded-4 bg-white border border-light shadow-sm h-100 d-flex flex-column">
-                    <div class="text-warning mb-3">
+                <div class="p-4 h-100 d-flex flex-column" style="background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
+                    <div class="mb-3" style="color: var(--color-gold);">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
-                    <p class="text-muted fst-italic flex-grow-1">
-                        "Como inmobiliaria aliada, la gestión de inmuebles, citas y solicitudes recibidas ha multiplicado la productividad de nuestro equipo."
+                    <p class="fst-italic flex-grow-1 mb-3" style="color: var(--text-muted);">
+                        "Como inmobiliaria aliada, la gestión de inmuebles y citas ha multiplicado la productividad de nuestro equipo."
                     </p>
-                    <div class="d-flex align-items-center gap-3 pt-3 border-top border-light">
-                        <img src="https://i.pravatar.cc/150?u=carlos" alt="Carlos Ramírez" class="rounded-circle" width="44" height="44">
+                    <div class="d-flex align-items-center gap-3 pt-3" style="border-top: 1px solid var(--border-subtle);">
+                        <img src="https://i.pravatar.cc/150?u=carlos" alt="Carlos Ramírez" class="rounded-circle" width="44" height="44" style="object-fit: cover; border: 2px solid var(--color-accent-light);">
                         <div>
-                            <h6 class="fw-bold mb-0">Carlos Ramírez</h6>
-                            <small class="text-muted">Agente Inmobiliario</small>
+                            <h6 class="fw-bold mb-0" style="color: var(--color-primary);">Carlos Ramírez</h6>
+                            <small style="color: var(--text-muted);">Agente Inmobiliario</small>
                         </div>
                     </div>
                 </div>

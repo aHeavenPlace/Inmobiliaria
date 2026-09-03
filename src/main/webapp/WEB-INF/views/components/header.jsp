@@ -5,15 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Inmobiliaria Sora - Portal inmobiliario líder en Colombia. Venta y arriendo de casas, apartamentos y oficinas.">
-    <title>${not empty pageTitle ? pageTitle : 'Inmobiliaria Sora | Inmuebles Exclusivos'}</title>
-
+    <meta name="description" content="Vesta - Portal inmobiliario premium. Venta y arriendo de casas, apartamentos y oficinas exclusivos.">
+    <title>${not empty pageTitle ? pageTitle : 'Vesta | Inmuebles Exclusivos'}</title>
+    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    <!-- Sora Custom Design System -->
+    <!-- Vesta Custom Design System -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/variables.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css">
 </head>
@@ -23,8 +23,8 @@
 <nav class="navbar navbar-expand-lg navbar-glass py-3">
     <div class="container">
         <a class="navbar-brand" href="${pageContext.request.contextPath}/home">
-            <i class="bi bi-buildings-fill text-primary"></i>
-            <span>SORA</span>
+            <i class="bi bi-buildings-fill" style="color: var(--color-accent);"></i>
+            <span>VESTA</span>
             <span class="brand-badge">Inmobiliaria</span>
         </a>
 
@@ -73,16 +73,16 @@
                                 </li>
                                 <li><hr class="dropdown-divider"></li>
                                 <c:if test="${sessionScope.usuarioLogueado.hasRole('admin')}">
-                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/admin/dashboard"><i class="bi bi-shield-lock me-2 text-primary"></i> Panel Administrador</a></li>
+                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/admin/dashboard"><i class="bi bi-shield-lock me-2" style="color: var(--color-primary);"></i> Panel Administrador</a></li>
                                 </c:if>
                                 <c:if test="${sessionScope.usuarioLogueado.hasRole('inmobiliaria')}">
-                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/inmobiliaria/dashboard"><i class="bi bi-building me-2 text-info"></i> Panel Inmobiliaria</a></li>
+                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/inmobiliaria/dashboard"><i class="bi bi-building me-2" style="color: var(--color-accent);"></i> Panel Inmobiliaria</a></li>
                                 </c:if>
                                 <c:if test="${sessionScope.usuarioLogueado.hasRole('cliente')}">
-                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/cliente/dashboard"><i class="bi bi-person-circle me-2 text-success"></i> Mi Panel</a></li>
-                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/cliente/favoritos"><i class="bi bi-heart me-2 text-danger"></i> Mis Favoritos</a></li>
-                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/cliente/citas"><i class="bi bi-calendar-event me-2 text-warning"></i> Mis Citas</a></li>
-                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/cliente/solicitudes"><i class="bi bi-file-earmark-text me-2 text-primary"></i> Mis Solicitudes</a></li>
+                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/cliente/dashboard"><i class="bi bi-person-circle me-2" style="color: var(--status-success);"></i> Mi Panel</a></li>
+                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/cliente/favoritos"><i class="bi bi-heart me-2" style="color: var(--status-danger);"></i> Mis Favoritos</a></li>
+                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/cliente/citas"><i class="bi bi-calendar-event me-2" style="color: var(--status-warning);"></i> Mis Citas</a></li>
+                                    <li><a class="dropdown-item py-2" href="${pageContext.request.contextPath}/cliente/solicitudes"><i class="bi bi-file-earmark-text me-2" style="color: var(--status-info);"></i> Mis Solicitudes</a></li>
                                 </c:if>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item py-2 text-danger fw-semibold" href="${pageContext.request.contextPath}/logout"><i class="bi bi-box-arrow-right me-2"></i> Cerrar Sesión</a></li>
