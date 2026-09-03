@@ -599,3 +599,201 @@ a:hover {
     .dashboard-sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border-subtle); }
     .search-card-float { margin-top: -40px; padding: 24px; }
 }
+
+/* ==========================================================================
+   AUTH PAGES (LOGIN & REGISTRO) - VESTA STYLE
+   ========================================================================== */
+.auth-page-wrapper {
+    min-height: calc(100vh - 72px);
+    background: linear-gradient(135deg, var(--bg-body) 0%, var(--bg-surface-subtle) 100%);
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.auth-card {
+    background: var(--bg-surface-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: var(--shadow-xl);
+}
+
+.vesta-logo-small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+    box-shadow: 0 8px 20px rgba(196, 121, 107, 0.3);
+}
+
+.logo-icon {
+    font-size: 2rem;
+}
+
+.text-vesta-charcoal {
+    color: var(--color-primary);
+}
+
+.text-vesta-gray {
+    color: var(--text-muted);
+}
+
+.text-vesta-accent {
+    color: var(--color-accent);
+}
+
+.form-label-vesta {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-group-vsta {
+    display: flex;
+    align-items: stretch;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    transition: all var(--transition-fast);
+    background-color: var(--bg-surface);
+}
+
+.input-group-vsta:focus-within {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px var(--color-accent-light);
+}
+
+.input-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    background-color: var(--bg-surface-subtle);
+    border-right: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+.input-group-vsta:focus-within .input-icon {
+    color: var(--color-accent);
+    background-color: var(--color-accent-light);
+}
+
+.form-control-vesta {
+    flex: 1;
+    border: none;
+    padding: 14px 18px;
+    background-color: transparent;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.form-control-vesta::placeholder {
+    color: var(--text-light);
+}
+
+.form-control-vesta:focus {
+    outline: none;
+}
+
+.form-select-vesta {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    background-color: var(--bg-surface-subtle);
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+}
+
+.form-select-vesta:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background-color: var(--bg-surface);
+    box-shadow: 0 0 0 4px var(--color-accent-light);
+}
+
+.btn-vesta-primary {
+    background: linear-gradient(135deg, var(--color-accent), #B8956B);
+    color: #FFFFFF !important;
+    border: none;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 14px var(--color-accent-glow);
+    font-size: 0.95rem;
+}
+
+.btn-vesta-primary:hover {
+    filter: brightness(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(196, 121, 107, 0.35);
+}
+
+.btn-outline-vesta {
+    background-color: transparent;
+    color: var(--text-muted) !important;
+    border: 1px solid var(--border-medium);
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    font-size: 0.85rem;
+}
+
+.btn-outline-vesta:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-light);
+    color: var(--color-accent) !important;
+}
+
+.quick-access-panel {
+    background-color: var(--bg-surface-subtle);
+    border-color: var(--border-subtle) !important;
+}
+
+.alert-danger-vsta {
+    background-color: var(--status-danger-bg);
+    color: var(--status-danger);
+    border: 1px solid rgba(196, 121, 107, 0.2);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.alert-success-vsta {
+    background-color: var(--status-success-bg);
+    color: var(--status-success);
+    border: 1px solid rgba(91, 140, 109, 0.2);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.shadow-xl {
+    box-shadow: var(--shadow-xl) !important;
+}
+
+.muted {
+    opacity: 0.8;
+}
