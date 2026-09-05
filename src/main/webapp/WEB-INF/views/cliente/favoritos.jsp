@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Mis Favoritos | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Mis Favoritos | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -13,7 +13,7 @@
                 <h2 class="fw-bold text-primary mb-1">Mis Propiedades Favoritas</h2>
                 <p class="text-muted mb-0">Inmuebles que has marcado para seguimiento rápido</p>
             </div>
-            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-sora-outline">
+            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-vesta-outline">
                 <i class="bi bi-search"></i> Buscar Más
             </a>
         </div>
@@ -26,7 +26,7 @@
                     <p class="text-muted max-w-md mx-auto mb-4" style="max-width: 450px;">
                         Navega por nuestro catálogo y haz clic en el icono de corazón de cualquier propiedad para guardarla aquí.
                     </p>
-                    <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-sora-accent">
+                    <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-vesta-accent">
                         Explorar Catálogo
                     </a>
                 </div>
@@ -74,7 +74,7 @@
 
                                     <div class="pt-3 mt-2 d-flex justify-content-between align-items-center">
                                         <small class="text-muted"><i class="bi bi-building"></i> ${p.inmobiliariaNombre}</small>
-                                        <a href="${pageContext.request.contextPath}/propiedad?id=${p.idPropiedad}" class="btn btn-sm btn-sora-primary">
+                                        <a href="${pageContext.request.contextPath}/propiedad?id=${p.idPropiedad}" class="btn btn-sm btn-vesta-primary">
                                             Ver Ficha
                                         </a>
                                     </div>

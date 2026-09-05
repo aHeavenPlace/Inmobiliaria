@@ -22,8 +22,8 @@
     <div class="search-card-float">
         <form action="${pageContext.request.contextPath}/catalogo" method="GET" class="row g-3 align-items-end">
             <div class="col-lg-3 col-md-6">
-                <label class="form-label-sora"><i class="bi bi-geo-alt me-1"></i> Ciudad</label>
-                <select name="ciudad" class="form-select form-select-sora">
+                <label class="form-label-vesta"><i class="bi bi-geo-alt me-1"></i> Ciudad</label>
+                <select name="ciudad" class="form-select form-select-vesta">
                     <option value="">Todas las ciudades</option>
                     <c:forEach var="c" items="${ciudades}">
                         <option value="${c.idCiudad}">${c.nombre} (${c.departamento})</option>
@@ -32,8 +32,8 @@
             </div>
 
             <div class="col-lg-3 col-md-6">
-                <label class="form-label-sora"><i class="bi bi-building me-1"></i> Tipo de Inmueble</label>
-                <select name="tipo" class="form-select form-select-sora">
+                <label class="form-label-vesta"><i class="bi bi-building me-1"></i> Tipo de Inmueble</label>
+                <select name="tipo" class="form-select form-select-vesta">
                     <option value="">Todos los tipos</option>
                     <c:forEach var="t" items="${tiposPropiedad}">
                         <option value="${t.idTipo}">${t.nombre}</option>
@@ -42,8 +42,8 @@
             </div>
 
             <div class="col-lg-2 col-md-6">
-                <label class="form-label-sora"><i class="bi bi-arrow-left-right me-1"></i> Operación</label>
-                <select name="operacion" class="form-select form-select-sora">
+                <label class="form-label-vesta"><i class="bi bi-arrow-left-right me-1"></i> Operación</label>
+                <select name="operacion" class="form-select form-select-vesta">
                     <option value="todos">Venta y Arriendo</option>
                     <option value="venta">Venta</option>
                     <option value="arriendo">Arriendo</option>
@@ -51,12 +51,12 @@
             </div>
 
             <div class="col-lg-2 col-md-6">
-                <label class="form-label-sora"><i class="bi bi-cash me-1"></i> Precio Máx ($)</label>
-                <input type="number" name="precio" class="form-control form-control-sora" placeholder="Ej: 500000000" step="10000000">
+                <label class="form-label-vesta"><i class="bi bi-cash me-1"></i> Precio Máx ($)</label>
+                <input type="number" name="precio" class="form-control form-control-vesta" placeholder="Ej: 500000000" step="10000000">
             </div>
 
             <div class="col-lg-2 col-md-12">
-                <button type="submit" class="btn btn-sora-accent w-100 py-3 justify-content-center">
+                <button type="submit" class="btn btn-vesta-accent w-100 py-3 justify-content-center">
                     <i class="bi bi-search"></i> Buscar
                 </button>
             </div>
@@ -72,7 +72,7 @@
                 <span class="text-uppercase fw-bold" style="color: var(--text-muted); font-size: 0.75rem; letter-spacing: 1.2px;">Portafolio Selecto</span>
                 <h2 class="fw-bold mb-0" style="color: var(--color-primary);">Propiedades Destacadas</h2>
             </div>
-            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-sora-outline d-none d-md-inline-flex">
+            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-vesta-outline d-none d-md-inline-flex">
                 Ver Todo el Catálogo <i class="bi bi-arrow-right"></i>
             </a>
         </div>
@@ -119,7 +119,7 @@
 
                             <div class="pt-3 mt-2 d-flex justify-content-between align-items-center">
                                 <small style="color: var(--text-muted);"><i class="bi bi-building"></i> ${p.inmobiliariaNombre}</small>
-                                <a href="${pageContext.request.contextPath}/propiedad?id=${p.idPropiedad}" class="btn btn-sm btn-sora-outline">
+                                <a href="${pageContext.request.contextPath}/propiedad?id=${p.idPropiedad}" class="btn btn-sm btn-vesta-outline">
                                     Ver Detalle
                                 </a>
                             </div>
@@ -130,7 +130,7 @@
         </div>
 
         <div class="text-center mt-5 d-md-none">
-            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-sora-outline w-100">
+            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-vesta-outline w-100">
                 Ver Todo el Catálogo <i class="bi bi-arrow-right ms-1"></i>
             </a>
         </div>

@@ -35,22 +35,22 @@
         <div class="collapse navbar-collapse" id="navbarMain">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-sora" href="${pageContext.request.contextPath}/home">
+                    <a class="nav-link nav-link-vesta" href="${pageContext.request.contextPath}/home">
                         <i class="bi bi-house me-1"></i> Inicio
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-sora" href="${pageContext.request.contextPath}/catalogo">
+                    <a class="nav-link nav-link-vesta" href="${pageContext.request.contextPath}/catalogo">
                         <i class="bi bi-grid me-1"></i> Catálogo
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-sora" href="${pageContext.request.contextPath}/catalogo?operacion=venta">
+                    <a class="nav-link nav-link-vesta" href="${pageContext.request.contextPath}/catalogo?operacion=venta">
                         <i class="bi bi-tag me-1"></i> En Venta
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-sora" href="${pageContext.request.contextPath}/catalogo?operacion=arriendo">
+                    <a class="nav-link nav-link-vesta" href="${pageContext.request.contextPath}/catalogo?operacion=arriendo">
                         <i class="bi bi-key me-1"></i> En Arriendo
                     </a>
                 </li>
@@ -60,7 +60,7 @@
                 <c:choose>
                     <c:when test="${not empty sessionScope.usuarioLogueado}">
                         <div class="dropdown">
-                            <button class="btn btn-sora-outline dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown">
+                            <button class="btn btn-vesta-outline dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown">
                                 <img src="${not empty sessionScope.usuarioLogueado.perfil.fotoUrl ? sessionScope.usuarioLogueado.perfil.fotoUrl : 'https://i.pravatar.cc/150?u=' + sessionScope.usuarioLogueado.idUsuario}" 
                                      alt="Avatar" class="rounded-circle" width="28" height="28" style="object-fit: cover;">
                                 <span>${sessionScope.nombreUsuario}</span>
@@ -90,10 +90,10 @@
                         </div>
                     </c:when>
                     <c:otherwise>
-                        <a href="${pageContext.request.contextPath}/login" class="btn btn-sora-outline">
+                        <a href="${pageContext.request.contextPath}/login" class="btn btn-vesta-outline">
                             <i class="bi bi-person"></i> Ingresar
                         </a>
-                        <a href="${pageContext.request.contextPath}/registro" class="btn btn-sora-accent">
+                        <a href="${pageContext.request.contextPath}/registro" class="btn btn-vesta-accent">
                             <i class="bi bi-plus-circle"></i> Registrarse
                         </a>
                     </c:otherwise>

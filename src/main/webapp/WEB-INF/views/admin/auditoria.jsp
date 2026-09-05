@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Log de Auditoría | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Log de Auditoría | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -19,8 +19,8 @@
         <form action="${pageContext.request.contextPath}/admin/auditoria" method="GET" class="bg-white p-3 rounded-4 border border-light shadow-sm mb-4">
             <div class="row g-3 align-items-end">
                 <div class="col-md-4">
-                    <label class="form-label-sora">Tabla Afectada</label>
-                    <select name="tabla" class="form-select form-select-sora">
+                    <label class="form-label-vesta">Tabla Afectada</label>
+                    <select name="tabla" class="form-select form-select-vesta">
                         <option value="">Todas las tablas</option>
                         <option value="usuario" ${filtroTabla == 'usuario' ? 'selected' : ''}>usuario</option>
                         <option value="propiedad" ${filtroTabla == 'propiedad' ? 'selected' : ''}>propiedad</option>
@@ -30,8 +30,8 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label-sora">Acción / Operación</label>
-                    <select name="accion" class="form-select form-select-sora">
+                    <label class="form-label-vesta">Acción / Operación</label>
+                    <select name="accion" class="form-select form-select-vesta">
                         <option value="">Todas las acciones</option>
                         <option value="INSERT" ${filtroAccion == 'INSERT' ? 'selected' : ''}>INSERT</option>
                         <option value="UPDATE" ${filtroAccion == 'UPDATE' ? 'selected' : ''}>UPDATE</option>
@@ -40,7 +40,7 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <button type="submit" class="btn btn-sora-primary w-100">
+                    <button type="submit" class="btn btn-vesta-primary w-100">
                         <i class="bi bi-filter"></i> Filtrar Registros
                     </button>
                 </div>
@@ -49,7 +49,7 @@
 
         <div class="bg-white rounded-4 border border-light shadow-sm overflow-hidden">
             <div class="table-responsive">
-                <table class="table-sora">
+                <table class="table-vesta">
                     <thead>
                         <tr>
                             <th>#</th>

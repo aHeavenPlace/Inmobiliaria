@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isErrorPage="true" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Error del Servidor (500) | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Error del Servidor (500) | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="container py-5 text-center" style="min-height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -13,7 +13,7 @@
         Hemos registrado el evento en nuestros registros de auditoría. Nuestro equipo de soporte técnico se encuentra atendiendo la situación.
     </p>
     <div class="d-flex gap-3">
-        <a href="${pageContext.request.contextPath}/home" class="btn btn-sora-primary">
+        <a href="${pageContext.request.contextPath}/home" class="btn btn-vesta-primary">
             <i class="bi bi-house-door me-1"></i> Ir al Inicio
         </a>
     </div>

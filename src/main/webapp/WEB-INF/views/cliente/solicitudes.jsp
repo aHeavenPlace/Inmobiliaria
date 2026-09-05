@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Mis Solicitudes | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Mis Solicitudes | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -13,7 +13,7 @@
                 <h2 class="fw-bold text-primary mb-1">Mis Solicitudes de Trámite</h2>
                 <p class="text-muted mb-0">Seguimiento de compras y arrendamientos radicados</p>
             </div>
-            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-sora-accent">
+            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-vesta-accent">
                 <i class="bi bi-file-earmark-plus"></i> Nueva Solicitud
             </a>
         </div>
@@ -35,13 +35,13 @@
                                 <h5 class="fw-bold text-primary mb-1">${s.propiedadTitulo}</h5>
                                 <small class="text-muted"><i class="bi bi-building"></i> ${s.inmobiliariaNombre}</small>
                             </div>
-                            <span class="badge-sora ${s.estado == 'aprobada' ? 'badge-sora-success' : s.estado == 'en_revision' ? 'badge-sora-info' : s.estado == 'pendiente' ? 'badge-sora-warning' : 'badge-sora-danger'}">
+                            <span class="badge-vesta ${s.estado == 'aprobada' ? 'badge-vesta-success' : s.estado == 'en_revision' ? 'badge-vesta-info' : s.estado == 'pendiente' ? 'badge-vesta-warning' : 'badge-vesta-danger'}">
                                 ${s.estado}
                             </span>
                         </div>
 
                         <!-- Timeline visual de estado -->
-                        <div class="timeline-sora my-3">
+                        <div class="timeline-vesta my-3">
                             <div class="timeline-step active">
                                 <div class="timeline-dot"></div>
                                 <div class="fw-semibold small">Radicación Recibida</div>
@@ -83,7 +83,7 @@
                         <p class="text-muted max-w-md mx-auto mb-4" style="max-width: 450px;">
                             Cuando encuentres una propiedad de tu interés en nuestro catálogo, podrás radicar tu solicitud de compra o arrendamiento con un clic.
                         </p>
-                        <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-sora-accent">
+                        <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-vesta-accent">
                             Buscar Inmuebles
                         </a>
                     </div>

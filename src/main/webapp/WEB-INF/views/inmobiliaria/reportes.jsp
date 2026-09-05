@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Reportes & Métricas | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Reportes & Métricas | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -13,7 +13,7 @@
                 <h2 class="fw-bold text-primary mb-1">Métricas y Reportes Estadísticos</h2>
                 <p class="text-muted mb-0">Análisis cuantitativo de oferta inmobiliaria, precios y concentración por ciudad</p>
             </div>
-            <a href="${pageContext.request.contextPath}/reportes/exportar-csv" class="btn btn-sora-primary">
+            <a href="${pageContext.request.contextPath}/reportes/exportar-csv" class="btn btn-vesta-primary">
                 <i class="bi bi-file-earmark-spreadsheet me-2"></i> Exportar a Excel / CSV
             </a>
         </div>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="table-responsive">
-                <table class="table-sora">
+                <table class="table-vesta">
                     <thead>
                         <tr>
                             <th>Ciudad</th>
@@ -86,7 +86,7 @@
             </div>
 
             <div class="table-responsive">
-                <table class="table-sora">
+                <table class="table-vesta">
                     <thead>
                         <tr>
                             <th>Tipo de Inmueble</th>

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Usuarios & Roles | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Usuarios & Roles | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -43,7 +43,7 @@
             </div>
 
             <div class="table-responsive">
-                <table class="table-sora">
+                <table class="table-vesta">
                     <thead>
                         <tr>
                             <th>Usuario</th>
@@ -76,7 +76,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="badge-sora ${u.activo ? 'badge-sora-success' : 'badge-sora-danger'}">
+                                    <span class="badge-vesta ${u.activo ? 'badge-vesta-success' : 'badge-vesta-danger'}">
                                         ${u.activo ? 'Activo' : 'Inactivo'}
                                     </span>
                                 </td>

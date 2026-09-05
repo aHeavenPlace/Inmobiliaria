@@ -64,7 +64,7 @@ a:hover {
     letter-spacing: 1px;
 }
 
-.nav-link-sora {
+.nav-link-vesta {
     font-weight: 500;
     color: var(--text-muted) !important;
     padding: 10px 18px !important;
@@ -73,7 +73,7 @@ a:hover {
     font-size: 0.95rem;
 }
 
-.nav-link-sora:hover, .nav-link-sora.active {
+.nav-link-vesta:hover, .nav-link-vesta.active {
     color: var(--color-primary) !important;
     background-color: var(--bg-surface-subtle);
 }
@@ -81,7 +81,7 @@ a:hover {
 /* ==========================================================================
    BUTTONS - ELEGANT & MODERN
    ========================================================================== */
-.btn-sora-primary {
+.btn-vesta-primary {
     background-color: var(--color-primary);
     color: var(--text-inverse) !important;
     border: 1px solid var(--color-primary);
@@ -95,14 +95,14 @@ a:hover {
     gap: 10px;
     font-size: 0.95rem;
 }
-.btn-sora-primary:hover {
+.btn-vesta-primary:hover {
     background-color: var(--color-primary-light);
     border-color: var(--color-primary-light);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
-.btn-sora-accent {
+.btn-vesta-accent {
     background: linear-gradient(135deg, var(--color-accent), #B8956B);
     color: #FFFFFF !important;
     border: none;
@@ -116,13 +116,13 @@ a:hover {
     gap: 10px;
     font-size: 0.95rem;
 }
-.btn-sora-accent:hover {
+.btn-vesta-accent:hover {
     filter: brightness(1.05);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(196, 121, 107, 0.35);
 }
 
-.btn-sora-outline {
+.btn-vesta-outline {
     background-color: transparent;
     color: var(--color-primary) !important;
     border: 1px solid var(--border-medium);
@@ -132,7 +132,7 @@ a:hover {
     transition: all var(--transition-fast);
     font-size: 0.95rem;
 }
-.btn-sora-outline:hover {
+.btn-vesta-outline:hover {
     border-color: var(--color-primary);
     background-color: var(--bg-surface-subtle);
     transform: translateY(-1px);
@@ -190,7 +190,7 @@ a:hover {
     z-index: 20;
 }
 
-.form-label-sora {
+.form-label-vesta {
     font-size: 0.75rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -200,7 +200,7 @@ a:hover {
     display: block;
 }
 
-.form-control-sora, .form-select-sora {
+.form-control-vesta, .form-select-vesta {
     width: 100%;
     padding: 14px 18px;
     border-radius: var(--radius-md);
@@ -212,7 +212,7 @@ a:hover {
     transition: all var(--transition-fast);
 }
 
-.form-control-sora:focus, .form-select-sora:focus {
+.form-control-vesta:focus, .form-select-vesta:focus {
     outline: none;
     border-color: var(--color-accent);
     background-color: var(--bg-surface);
@@ -485,7 +485,7 @@ a:hover {
 /* ==========================================================================
    TABLES & BADGES - CLEAN
    ========================================================================== */
-.table-sora {
+.table-vesta {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
@@ -496,7 +496,7 @@ a:hover {
     border: 1px solid var(--border-subtle);
 }
 
-.table-sora th {
+.table-vesta th {
     background-color: var(--bg-surface-subtle);
     color: var(--text-muted);
     font-size: 0.75rem;
@@ -507,22 +507,22 @@ a:hover {
     border-bottom: 1px solid var(--border-subtle);
 }
 
-.table-sora td {
+.table-vesta td {
     padding: 18px 20px;
     vertical-align: middle;
     border-bottom: 1px solid var(--border-subtle);
     font-size: 0.93rem;
 }
 
-.table-sora tr:last-child td {
+.table-vesta tr:last-child td {
     border-bottom: none;
 }
 
-.table-sora tr:hover td {
+.table-vesta tr:hover td {
     background-color: var(--bg-surface-subtle);
 }
 
-.badge-sora {
+.badge-vesta {
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -533,18 +533,18 @@ a:hover {
     text-transform: capitalize;
 }
 
-.badge-sora-success { background-color: var(--status-success-bg); color: var(--status-success); }
-.badge-sora-warning { background-color: var(--status-warning-bg); color: var(--status-warning); }
-.badge-sora-danger { background-color: var(--status-danger-bg); color: var(--status-danger); }
-.badge-sora-info { background-color: var(--status-info-bg); color: var(--status-info); }
+.badge-vesta-success { background-color: var(--status-success-bg); color: var(--status-success); }
+.badge-vesta-warning { background-color: var(--status-warning-bg); color: var(--status-warning); }
+.badge-vesta-danger { background-color: var(--status-danger-bg); color: var(--status-danger); }
+.badge-vesta-info { background-color: var(--status-info-bg); color: var(--status-info); }
 
 /* Timeline de Solicitudes */
-.timeline-sora {
+.timeline-vesta {
     position: relative;
     padding-left: 30px;
     margin: 22px 0;
 }
-.timeline-sora::before {
+.timeline-vesta::before {
     content: '';
     position: absolute;
     left: 9px;
@@ -572,23 +572,23 @@ a:hover {
 }
 
 /* Footer - Elegant Dark */
-.footer-sora {
+.footer-vesta {
     background-color: var(--color-primary);
     color: #9C968F;
     padding: 70px 0 28px 0;
     margin-top: 80px;
 }
-.footer-sora h5 {
+.footer-vesta h5 {
     color: #FFFFFF;
     font-weight: 600;
     margin-bottom: 20px;
     font-size: 1rem;
 }
-.footer-sora a {
+.footer-vesta a {
     color: #9C968F;
     transition: color var(--transition-fast);
 }
-.footer-sora a:hover {
+.footer-vesta a:hover {
     color: #FFFFFF;
 }
 

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Panel Administrador | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Panel Administrador | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -112,16 +112,16 @@
                 <div class="bg-white p-4 rounded-4 border border-light shadow-sm">
                     <h5 class="fw-bold text-primary mb-3"><i class="bi bi-grid-3x3-gap me-2"></i> Acciones Administrativas</h5>
                     <div class="d-grid gap-2">
-                        <a href="${pageContext.request.contextPath}/admin/usuarios" class="btn btn-sora-outline justify-content-start">
+                        <a href="${pageContext.request.contextPath}/admin/usuarios" class="btn btn-vesta-outline justify-content-start">
                             <i class="bi bi-people me-2"></i> Gestionar Usuarios & Roles
                         </a>
-                        <a href="${pageContext.request.contextPath}/admin/catalogos" class="btn btn-sora-outline justify-content-start">
+                        <a href="${pageContext.request.contextPath}/admin/catalogos" class="btn btn-vesta-outline justify-content-start">
                             <i class="bi bi-sliders me-2"></i> Parametrización & Catálogos
                         </a>
-                        <a href="${pageContext.request.contextPath}/admin/auditoria" class="btn btn-sora-outline justify-content-start">
+                        <a href="${pageContext.request.contextPath}/admin/auditoria" class="btn btn-vesta-outline justify-content-start">
                             <i class="bi bi-journal-text me-2"></i> Log de Auditoría Completo
                         </a>
-                        <a href="${pageContext.request.contextPath}/reportes/exportar-csv" class="btn btn-sora-primary justify-content-start">
+                        <a href="${pageContext.request.contextPath}/reportes/exportar-csv" class="btn btn-vesta-primary justify-content-start">
                             <i class="bi bi-file-earmark-spreadsheet me-2"></i> Exportar Reporte CSV
                         </a>
                     </div>

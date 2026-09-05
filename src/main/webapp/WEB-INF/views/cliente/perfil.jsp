@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Mi Perfil | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Mi Perfil | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -28,37 +28,37 @@
                     <form action="${pageContext.request.contextPath}/cliente/perfil" method="POST">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label class="form-label-sora">Nombres</label>
-                                <input type="text" name="nombres" class="form-control form-control-sora" value="${perfil.nombres}" required>
+                                <label class="form-label-vesta">Nombres</label>
+                                <input type="text" name="nombres" class="form-control form-control-vesta" value="${perfil.nombres}" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label-sora">Apellidos</label>
-                                <input type="text" name="apellidos" class="form-control form-control-sora" value="${perfil.apellidos}" required>
+                                <label class="form-label-vesta">Apellidos</label>
+                                <input type="text" name="apellidos" class="form-control form-control-vesta" value="${perfil.apellidos}" required>
                             </div>
 
                             <div class="col-md-6">
-                                <label class="form-label-sora">Documento de Identidad</label>
-                                <input type="text" name="documento" class="form-control form-control-sora" value="${perfil.documento}">
+                                <label class="form-label-vesta">Documento de Identidad</label>
+                                <input type="text" name="documento" class="form-control form-control-vesta" value="${perfil.documento}">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label-sora">Teléfono</label>
-                                <input type="tel" name="telefono" class="form-control form-control-sora" value="${perfil.telefono}">
-                            </div>
-
-                            <div class="col-12">
-                                <label class="form-label-sora">Dirección de Residencia</label>
-                                <input type="text" name="direccion" class="form-control form-control-sora" value="${perfil.direccion}">
+                                <label class="form-label-vesta">Teléfono</label>
+                                <input type="tel" name="telefono" class="form-control form-control-vesta" value="${perfil.telefono}">
                             </div>
 
                             <div class="col-12">
-                                <label class="form-label-sora">Correo Electrónico (Registrado)</label>
-                                <input type="email" class="form-control form-control-sora bg-light" value="${sessionScope.correoUsuario}" readonly>
+                                <label class="form-label-vesta">Dirección de Residencia</label>
+                                <input type="text" name="direccion" class="form-control form-control-vesta" value="${perfil.direccion}">
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label-vesta">Correo Electrónico (Registrado)</label>
+                                <input type="email" class="form-control form-control-vesta bg-light" value="${sessionScope.correoUsuario}" readonly>
                                 <small class="text-muted">El correo electrónico identifica tu cuenta de forma única y no puede modificarse.</small>
                             </div>
                         </div>
 
                         <div class="mt-4 pt-3 border-top">
-                            <button type="submit" class="btn btn-sora-accent">
+                            <button type="submit" class="btn btn-vesta-accent">
                                 <i class="bi bi-check2-circle"></i> Guardar Cambios
                             </button>
                         </div>

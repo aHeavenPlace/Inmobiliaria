@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Mi Panel de Cliente | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Mi Panel de Cliente | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -13,7 +13,7 @@
                 <h2 class="fw-bold text-primary mb-1">¡Hola, ${sessionScope.nombreUsuario}!</h2>
                 <p class="text-muted mb-0">Gestiona tus citas programadas, estado de solicitudes y propiedades guardadas</p>
             </div>
-            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-sora-accent">
+            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-vesta-accent">
                 <i class="bi bi-search"></i> Explorar Propiedades
             </a>
         </div>
@@ -91,7 +91,7 @@
                                             <small class="text-muted d-block"><i class="bi bi-clock"></i> ${c.fechaHoraFormateada}</small>
                                             <small class="text-muted"><i class="bi bi-building"></i> ${c.inmobiliariaNombre}</small>
                                         </div>
-                                        <span class="badge-sora ${c.estado == 'confirmada' ? 'badge-sora-success' : c.estado == 'pendiente' ? 'badge-sora-warning' : c.estado == 'cancelada' ? 'badge-sora-danger' : 'badge-sora-info'}">
+                                        <span class="badge-vesta ${c.estado == 'confirmada' ? 'badge-vesta-success' : c.estado == 'pendiente' ? 'badge-vesta-warning' : c.estado == 'cancelada' ? 'badge-vesta-danger' : 'badge-vesta-info'}">
                                             ${c.estado}
                                         </span>
                                     </div>
@@ -127,7 +127,7 @@
                                                 <small class="text-primary"><i class="bi bi-paperclip"></i> ${s.documentos.size()} documento(s) adjunto(s)</small>
                                             </c:if>
                                         </div>
-                                        <span class="badge-sora ${s.estado == 'aprobada' ? 'badge-sora-success' : s.estado == 'en_revision' ? 'badge-sora-info' : s.estado == 'pendiente' ? 'badge-sora-warning' : 'badge-sora-danger'}">
+                                        <span class="badge-vesta ${s.estado == 'aprobada' ? 'badge-vesta-success' : s.estado == 'en_revision' ? 'badge-vesta-info' : s.estado == 'pendiente' ? 'badge-vesta-warning' : 'badge-vesta-danger'}">
                                             ${s.estado}
                                         </span>
                                     </div>

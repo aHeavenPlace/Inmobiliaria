@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Solicitudes Recibidas | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Solicitudes Recibidas | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -29,7 +29,7 @@
                         <div>
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <span class="badge bg-primary text-uppercase px-2 py-1">Solicitud de ${s.tipo}</span>
-                                <span class="badge-sora ${s.estado == 'aprobada' ? 'badge-sora-success' : s.estado == 'en_revision' ? 'badge-sora-info' : s.estado == 'pendiente' ? 'badge-sora-warning' : 'badge-sora-danger'}">
+                                <span class="badge-vesta ${s.estado == 'aprobada' ? 'badge-vesta-success' : s.estado == 'en_revision' ? 'badge-vesta-info' : s.estado == 'pendiente' ? 'badge-vesta-warning' : 'badge-vesta-danger'}">
                                     ${s.estado}
                                 </span>
                             </div>

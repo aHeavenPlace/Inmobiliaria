@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Mis Citas Agendadas | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Mis Citas Agendadas | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -13,7 +13,7 @@
                 <h2 class="fw-bold text-primary mb-1">Mis Visitas Programadas</h2>
                 <p class="text-muted mb-0">Historial y estado de tus citas con agentes inmobiliarios</p>
             </div>
-            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-sora-accent">
+            <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-vesta-accent">
                 <i class="bi bi-plus-circle"></i> Agendar Nueva Visita
             </a>
         </div>
@@ -26,7 +26,7 @@
         </c:if>
 
         <div class="table-responsive">
-            <table class="table-sora">
+            <table class="table-vesta">
                 <thead>
                     <tr>
                         <th>Propiedad</th>
@@ -53,7 +53,7 @@
                                 <div class="fw-semibold"><i class="bi bi-calendar-event text-primary me-1"></i> ${c.fechaHoraFormateada}</div>
                             </td>
                             <td>
-                                <span class="badge-sora ${c.estado == 'confirmada' ? 'badge-sora-success' : c.estado == 'pendiente' ? 'badge-sora-warning' : c.estado == 'cancelada' ? 'badge-sora-danger' : 'badge-sora-info'}">
+                                <span class="badge-vesta ${c.estado == 'confirmada' ? 'badge-vesta-success' : c.estado == 'pendiente' ? 'badge-vesta-warning' : c.estado == 'cancelada' ? 'badge-vesta-danger' : 'badge-vesta-info'}">
                                     ${c.estado}
                                 </span>
                             </td>
@@ -61,7 +61,7 @@
                                 <small class="text-muted">${not empty c.notas ? c.notas : 'Sin notas'}</small>
                             </td>
                             <td>
-                                <a href="${pageContext.request.contextPath}/propiedad?id=${c.idPropiedad}" class="btn btn-sm btn-sora-outline">
+                                <a href="${pageContext.request.contextPath}/propiedad?id=${c.idPropiedad}" class="btn btn-sm btn-vesta-outline">
                                     Ver Ficha
                                 </a>
                             </td>

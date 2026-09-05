@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Parametrización | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Parametrización | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -32,9 +32,9 @@
                     </div>
 
                     <form action="${pageContext.request.contextPath}/admin/catalogos/ciudad" method="POST" class="d-flex gap-2 mb-3">
-                        <input type="text" name="nombre" class="form-control form-control-sora" placeholder="Nombre de ciudad" required>
-                        <input type="text" name="departamento" class="form-control form-control-sora" placeholder="Departamento" required>
-                        <button type="submit" class="btn btn-sora-accent flex-shrink-0"><i class="bi bi-plus-lg"></i></button>
+                        <input type="text" name="nombre" class="form-control form-control-vesta" placeholder="Nombre de ciudad" required>
+                        <input type="text" name="departamento" class="form-control form-control-vesta" placeholder="Departamento" required>
+                        <button type="submit" class="btn btn-vesta-accent flex-shrink-0"><i class="bi bi-plus-lg"></i></button>
                     </form>
 
                     <div class="catalog-list" style="max-height: 280px; overflow-y: auto;">
@@ -60,8 +60,8 @@
                     </div>
 
                     <form action="${pageContext.request.contextPath}/admin/catalogos/tipo-propiedad" method="POST" class="d-flex gap-2 mb-3">
-                        <input type="text" name="nombre" class="form-control form-control-sora" placeholder="Tipo de inmueble (ej: Bodega)" required>
-                        <button type="submit" class="btn btn-sora-accent flex-shrink-0"><i class="bi bi-plus-lg"></i></button>
+                        <input type="text" name="nombre" class="form-control form-control-vesta" placeholder="Tipo de inmueble (ej: Bodega)" required>
+                        <button type="submit" class="btn btn-vesta-accent flex-shrink-0"><i class="bi bi-plus-lg"></i></button>
                     </form>
 
                     <div class="catalog-list" style="max-height: 280px; overflow-y: auto;">
@@ -84,8 +84,8 @@
                     </div>
 
                     <form action="${pageContext.request.contextPath}/admin/catalogos/caracteristica" method="POST" class="d-flex gap-2 mb-3">
-                        <input type="text" name="nombre" class="form-control form-control-sora" placeholder="Ej: Jacuzzi, Gimnasio, Bodega..." required>
-                        <button type="submit" class="btn btn-sora-accent flex-shrink-0"><i class="bi bi-plus-lg"></i></button>
+                        <input type="text" name="nombre" class="form-control form-control-vesta" placeholder="Ej: Jacuzzi, Gimnasio, Bodega..." required>
+                        <button type="submit" class="btn btn-vesta-accent flex-shrink-0"><i class="bi bi-plus-lg"></i></button>
                     </form>
 
                     <div class="d-flex flex-wrap gap-2 mt-2" style="max-height: 220px; overflow-y: auto;">

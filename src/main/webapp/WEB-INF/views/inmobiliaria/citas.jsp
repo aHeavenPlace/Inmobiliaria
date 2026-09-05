@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Gestión de Citas | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Gestión de Citas | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -23,7 +23,7 @@
         </c:if>
 
         <div class="table-responsive">
-            <table class="table-sora">
+            <table class="table-vesta">
                 <thead>
                     <tr>
                         <th>Propiedad Solicitada</th>
@@ -52,7 +52,7 @@
                                 <div class="fw-semibold text-dark">${c.fechaHoraFormateada}</div>
                             </td>
                             <td>
-                                <span class="badge-sora ${c.estado == 'confirmada' ? 'badge-sora-success' : c.estado == 'pendiente' ? 'badge-sora-warning' : c.estado == 'cancelada' ? 'badge-sora-danger' : 'badge-sora-info'}">
+                                <span class="badge-vesta ${c.estado == 'confirmada' ? 'badge-vesta-success' : c.estado == 'pendiente' ? 'badge-vesta-warning' : c.estado == 'cancelada' ? 'badge-vesta-danger' : 'badge-vesta-info'}">
                                     ${c.estado}
                                 </span>
                             </td>

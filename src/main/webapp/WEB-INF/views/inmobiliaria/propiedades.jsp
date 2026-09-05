@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Gestión de Inmuebles | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Gestión de Inmuebles | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -13,7 +13,7 @@
                 <h2 class="fw-bold text-primary mb-1">Portafolio de Inmuebles</h2>
                 <p class="text-muted mb-0">Administra las propiedades publicadas por tu inmobiliaria</p>
             </div>
-            <a href="${pageContext.request.contextPath}/inmobiliaria/propiedad-nueva" class="btn btn-sora-accent">
+            <a href="${pageContext.request.contextPath}/inmobiliaria/propiedad-nueva" class="btn btn-vesta-accent">
                 <i class="bi bi-plus-lg"></i> Publicar Nueva Propiedad
             </a>
         </div>
@@ -40,7 +40,7 @@
         </c:if>
 
         <div class="table-responsive">
-            <table class="table-sora">
+            <table class="table-vesta">
                 <thead>
                     <tr>
                         <th>Inmueble</th>
@@ -74,7 +74,7 @@
                             <td><span class="badge bg-primary text-uppercase">${p.tipoOperacion}</span></td>
                             <td class="fw-bold text-primary">${p.precioFormateado}</td>
                             <td>
-                                <span class="badge-sora ${p.estado == 'disponible' ? 'badge-sora-success' : p.estado == 'vendido' ? 'badge-sora-info' : 'badge-sora-warning'}">
+                                <span class="badge-vesta ${p.estado == 'disponible' ? 'badge-vesta-success' : p.estado == 'vendido' ? 'badge-vesta-info' : 'badge-vesta-warning'}">
                                     ${p.estado}
                                 </span>
                             </td>

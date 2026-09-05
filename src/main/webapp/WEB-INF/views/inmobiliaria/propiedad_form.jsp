@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="${not empty propiedad ? 'Editar Inmueble' : 'Publicar Nuevo Inmueble'} | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="${not empty propiedad ? 'Editar Inmueble' : 'Publicar Nuevo Inmueble'} | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="dashboard-wrapper">
@@ -13,7 +13,7 @@
                 <h2 class="fw-bold text-primary mb-1">${not empty propiedad ? 'Editar Inmueble' : 'Publicar Nuevo Inmueble'}</h2>
                 <p class="text-muted mb-0">Completa la ficha técnica para publicar el inmueble en el portal nacional</p>
             </div>
-            <a href="${pageContext.request.contextPath}/inmobiliaria/propiedades" class="btn btn-sora-outline">
+            <a href="${pageContext.request.contextPath}/inmobiliaria/propiedades" class="btn btn-vesta-outline">
                 <i class="bi bi-arrow-left"></i> Volver al Listado
             </a>
         </div>
@@ -38,22 +38,22 @@
                     </div>
 
                     <div class="col-md-8">
-                        <label class="form-label-sora">Título de la Publicación *</label>
-                        <input type="text" name="titulo" class="form-control form-control-sora" 
+                        <label class="form-label-vesta">Título de la Publicación *</label>
+                        <input type="text" name="titulo" class="form-control form-control-vesta" 
                                placeholder="Ej: Apartamento moderno con vista en Cabecera" 
                                value="${propiedad.titulo}" required>
                     </div>
 
                     <div class="col-md-4">
-                        <label class="form-label-sora">Matrícula Inmobiliaria *</label>
-                        <input type="text" name="matriculaInmobiliaria" class="form-control form-control-sora" 
+                        <label class="form-label-vesta">Matrícula Inmobiliaria *</label>
+                        <input type="text" name="matriculaInmobiliaria" class="form-control form-control-vesta" 
                                placeholder="Ej: MAT-2026-999" 
                                value="${propiedad.matriculaInmobiliaria}" required>
                     </div>
 
                     <div class="col-md-4">
-                        <label class="form-label-sora">Tipo de Inmueble *</label>
-                        <select name="idTipo" class="form-select form-select-sora" required>
+                        <label class="form-label-vesta">Tipo de Inmueble *</label>
+                        <select name="idTipo" class="form-select form-select-vesta" required>
                             <c:forEach var="t" items="${tiposPropiedad}">
                                 <option value="${t.idTipo}" ${propiedad.idTipo == t.idTipo ? 'selected' : ''}>${t.nombre}</option>
                             </c:forEach>
@@ -61,16 +61,16 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label class="form-label-sora">Tipo de Operación *</label>
-                        <select name="tipoOperacion" class="form-select form-select-sora" required>
+                        <label class="form-label-vesta">Tipo de Operación *</label>
+                        <select name="tipoOperacion" class="form-select form-select-vesta" required>
                             <option value="venta" ${propiedad.tipoOperacion == 'venta' ? 'selected' : ''}>Venta</option>
                             <option value="arriendo" ${propiedad.tipoOperacion == 'arriendo' ? 'selected' : ''}>Arriendo</option>
                         </select>
                     </div>
 
                     <div class="col-md-4">
-                        <label class="form-label-sora">Estado de Disponibilidad *</label>
-                        <select name="estado" class="form-select form-select-sora" required>
+                        <label class="form-label-vesta">Estado de Disponibilidad *</label>
+                        <select name="estado" class="form-select form-select-vesta" required>
                             <option value="disponible" ${propiedad.estado == 'disponible' ? 'selected' : ''}>Disponible</option>
                             <option value="vendido" ${propiedad.estado == 'vendido' ? 'selected' : ''}>Vendido</option>
                             <option value="arrendado" ${propiedad.estado == 'arrendado' ? 'selected' : ''}>Arrendado</option>
@@ -79,8 +79,8 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label class="form-label-sora">Precio ($ COP) *</label>
-                        <input type="number" name="precio" class="form-control form-control-sora" 
+                        <label class="form-label-vesta">Precio ($ COP) *</label>
+                        <input type="number" name="precio" class="form-control form-control-vesta" 
                                placeholder="350000000" value="${propiedad.precio}" required step="100000">
                     </div>
 
@@ -90,8 +90,8 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label class="form-label-sora">Ciudad *</label>
-                        <select name="idCiudad" class="form-select form-select-sora" required>
+                        <label class="form-label-vesta">Ciudad *</label>
+                        <select name="idCiudad" class="form-select form-select-vesta" required>
                             <c:forEach var="c" items="${ciudades}">
                                 <option value="${c.idCiudad}" ${propiedad.idCiudad == c.idCiudad ? 'selected' : ''}>
                                     ${c.nombre} (${c.departamento})
@@ -101,32 +101,32 @@
                     </div>
 
                     <div class="col-md-8">
-                        <label class="form-label-sora">Dirección Física *</label>
-                        <input type="text" name="direccion" class="form-control form-control-sora" 
+                        <label class="form-label-vesta">Dirección Física *</label>
+                        <input type="text" name="direccion" class="form-control form-control-vesta" 
                                placeholder="Calle 50 #25-30" value="${propiedad.direccion}" required>
                     </div>
 
                     <div class="col-md-4">
-                        <label class="form-label-sora">Área Construida (m²)</label>
-                        <input type="number" name="areaM2" class="form-control form-control-sora" 
+                        <label class="form-label-vesta">Área Construida (m²)</label>
+                        <input type="number" name="areaM2" class="form-control form-control-vesta" 
                                placeholder="85.5" value="${propiedad.areaM2}" step="0.1">
                     </div>
 
                     <div class="col-md-4">
-                        <label class="form-label-sora">Habitaciones</label>
-                        <input type="number" name="habitaciones" class="form-control form-control-sora" 
+                        <label class="form-label-vesta">Habitaciones</label>
+                        <input type="number" name="habitaciones" class="form-control form-control-vesta" 
                                value="${not empty propiedad.habitaciones ? propiedad.habitaciones : 3}" min="0">
                     </div>
 
                     <div class="col-md-4">
-                        <label class="form-label-sora">Baños</label>
-                        <input type="number" name="banos" class="form-control form-control-sora" 
+                        <label class="form-label-vesta">Baños</label>
+                        <input type="number" name="banos" class="form-control form-control-vesta" 
                                value="${not empty propiedad.banos ? propiedad.banos : 2}" min="0">
                     </div>
 
                     <div class="col-12">
-                        <label class="form-label-sora">Descripción Detallada</label>
-                        <textarea name="descripcion" rows="4" class="form-control form-control-sora" 
+                        <label class="form-label-vesta">Descripción Detallada</label>
+                        <textarea name="descripcion" rows="4" class="form-control form-control-vesta" 
                                   placeholder="Describe las virtudes del inmueble, acabados, vías de acceso...">${propiedad.descripcion}</textarea>
                     </div>
 
@@ -151,8 +151,8 @@
                     <!-- Galería de Fotos -->
                     <div class="col-12 mt-4">
                         <h5 class="fw-bold text-primary pb-2 border-bottom"><i class="bi bi-images me-2"></i> 4. Galería de Imágenes (URLs)</h5>
-                        <label class="form-label-sora">URLs de Imágenes (una por línea o separadas por coma)</label>
-                        <textarea name="imagenesUrls" rows="3" class="form-control form-control-sora" 
+                        <label class="form-label-vesta">URLs de Imágenes (una por línea o separadas por coma)</label>
+                        <textarea name="imagenesUrls" rows="3" class="form-control form-control-vesta" 
                                   placeholder="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&#10;https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800"></textarea>
                         <small class="text-muted">Si se deja vacío, el sistema asignará fotos arquitectónicas de alta definición por defecto.</small>
                     </div>
@@ -160,7 +160,7 @@
 
                 <div class="d-flex justify-content-end gap-3 mt-5 pt-3 border-top">
                     <a href="${pageContext.request.contextPath}/inmobiliaria/propiedades" class="btn btn-light">Cancelar</a>
-                    <button type="submit" class="btn btn-sora-accent px-4 py-2">
+                    <button type="submit" class="btn btn-vesta-accent px-4 py-2">
                         <i class="bi bi-check-lg me-1"></i> ${not empty propiedad ? 'Guardar Cambios' : 'Publicar Inmueble'}
                     </button>
                 </div>

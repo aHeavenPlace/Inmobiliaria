@@ -6,7 +6,7 @@
              alt="Avatar" class="sidebar-avatar">
         <div class="overflow-hidden">
             <h6 class="fw-bold mb-0 text-truncate">${sessionScope.nombreUsuario}</h6>
-            <small class="text-muted d-block text-truncate">Inmobiliaria Sora SAS</small>
+            <small class="text-muted d-block text-truncate">Inmobiliaria Vesta SAS</small>
             <span class="badge bg-info bg-opacity-10 text-info small px-2 py-0 mt-1">Agente Inmobiliario</span>
         </div>
     </div>

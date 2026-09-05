@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="Catálogo de Inmuebles | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="Catálogo de Inmuebles | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="vesta-header-section py-5 mb-5">
@@ -31,18 +31,18 @@
                 <form action="${pageContext.request.contextPath}/catalogo" method="GET" id="filterForm">
                     <!-- Búsqueda por palabra clave -->
                     <div class="mb-3">
-                        <label class="form-label-sora">Buscar por texto</label>
+                        <label class="form-label-vesta">Buscar por texto</label>
                         <div class="input-group">
                             <span class="input-group-text bg-light border-end-0"><i class="bi bi-search text-muted"></i></span>
-                            <input type="text" name="q" class="form-control form-control-sora border-start-0" 
+                            <input type="text" name="q" class="form-control form-control-vesta border-start-0" 
                                    placeholder="Barrio, título..." value="${filtroQ}">
                         </div>
                     </div>
 
                     <!-- Ciudad -->
                     <div class="mb-3">
-                        <label class="form-label-sora">Ciudad</label>
-                        <select name="ciudad" class="form-select form-select-sora" onchange="document.getElementById('filterForm').submit();">
+                        <label class="form-label-vesta">Ciudad</label>
+                        <select name="ciudad" class="form-select form-select-vesta" onchange="document.getElementById('filterForm').submit();">
                             <option value="">Todas las ciudades</option>
                             <c:forEach var="c" items="${ciudades}">
                                 <option value="${c.idCiudad}" ${filtroCiudad == c.idCiudad ? 'selected' : ''}>
@@ -54,8 +54,8 @@
 
                     <!-- Tipo de Propiedad -->
                     <div class="mb-3">
-                        <label class="form-label-sora">Tipo de Inmueble</label>
-                        <select name="tipo" class="form-select form-select-sora" onchange="document.getElementById('filterForm').submit();">
+                        <label class="form-label-vesta">Tipo de Inmueble</label>
+                        <select name="tipo" class="form-select form-select-vesta" onchange="document.getElementById('filterForm').submit();">
                             <option value="">Todos los tipos</option>
                             <c:forEach var="t" items="${tiposPropiedad}">
                                 <option value="${t.idTipo}" ${filtroTipo == t.idTipo ? 'selected' : ''}>
@@ -67,7 +67,7 @@
 
                     <!-- Tipo de Operación -->
                     <div class="mb-3">
-                        <label class="form-label-sora">Operación</label>
+                        <label class="form-label-vesta">Operación</label>
                         <div class="d-flex gap-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="operacion" id="opTodos" value="todos" 
@@ -92,12 +92,12 @@
 
                     <!-- Precio Máximo -->
                     <div class="mb-4">
-                        <label class="form-label-sora">Precio Máximo ($)</label>
-                        <input type="number" name="precio" class="form-control form-control-sora" 
+                        <label class="form-label-vesta">Precio Máximo ($)</label>
+                        <input type="number" name="precio" class="form-control form-control-vesta" 
                                placeholder="Ej: 400000000" value="${filtroPrecio}" step="10000000">
                     </div>
 
-                    <button type="submit" class="btn btn-sora-accent w-100 justify-content-center">
+                    <button type="submit" class="btn btn-vesta-accent w-100 justify-content-center">
                         <i class="bi bi-filter"></i> Aplicar Filtros
                     </button>
                 </form>
@@ -114,7 +114,7 @@
                         <p class="text-muted max-w-md mx-auto mb-4" style="max-width: 450px;">
                             Intenta ajustar o limpiar los filtros seleccionados para ampliar los resultados de búsqueda.
                         </p>
-                        <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-sora-primary">
+                        <a href="${pageContext.request.contextPath}/catalogo" class="btn btn-vesta-primary">
                             Ver todas las propiedades
                         </a>
                     </div>
@@ -164,7 +164,7 @@
                                             <span class="badge bg-light text-dark border">
                                                 <i class="bi bi-building me-1"></i> ${p.inmobiliariaNombre}
                                             </span>
-                                            <a href="${pageContext.request.contextPath}/propiedad?id=${p.idPropiedad}" class="btn btn-sm btn-sora-primary">
+                                            <a href="${pageContext.request.contextPath}/propiedad?id=${p.idPropiedad}" class="btn btn-sm btn-vesta-primary">
                                                 Detalles
                                             </a>
                                         </div>

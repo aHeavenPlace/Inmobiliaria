@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
-    <jsp:param name="pageTitle" value="${propiedad.titulo} | Inmobiliaria Sora"/>
+    <jsp:param name="pageTitle" value="${propiedad.titulo} | Inmobiliaria Vesta"/>
 </jsp:include>
 
 <div class="container py-4">
@@ -129,16 +129,16 @@
                 </div>
 
                 <div class="d-grid gap-2 mb-3">
-                    <button class="btn btn-sora-accent py-3 fw-bold" data-bs-toggle="modal" data-bs-target="#modalAgendarCita">
+                    <button class="btn btn-vesta-accent py-3 fw-bold" data-bs-toggle="modal" data-bs-target="#modalAgendarCita">
                         <i class="bi bi-calendar-check me-2"></i> Agendar Visita
                     </button>
-                    <button class="btn btn-sora-primary py-3 fw-bold" data-bs-toggle="modal" data-bs-target="#modalRadicarSolicitud">
+                    <button class="btn btn-vesta-primary py-3 fw-bold" data-bs-toggle="modal" data-bs-target="#modalRadicarSolicitud">
                         <i class="bi bi-file-earmark-arrow-up me-2"></i> Radicar Solicitud
                     </button>
                 </div>
 
                 <div class="alert alert-light border small text-muted mb-0">
-                    <i class="bi bi-shield-lock-fill text-success me-1"></i> Transacción respaldada y verificada bajo los estándares de Inmobiliaria Sora.
+                    <i class="bi bi-shield-lock-fill text-success me-1"></i> Transacción respaldada y verificada bajo los estándares de Inmobiliaria Vesta.
                 </div>
             </div>
         </div>
@@ -164,12 +164,12 @@
                         </c:when>
                         <c:otherwise>
                             <div class="mb-3">
-                                <label class="form-label-sora">Fecha y Hora Preferida</label>
-                                <input type="datetime-local" name="fechaHora" class="form-control form-control-sora" required>
+                                <label class="form-label-vesta">Fecha y Hora Preferida</label>
+                                <input type="datetime-local" name="fechaHora" class="form-control form-control-vesta" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label-sora">Notas / Preguntas para el Asesor</label>
-                                <textarea name="notas" rows="3" class="form-control form-control-sora" placeholder="Indica detalles adicionales de tu disponibilidad..."></textarea>
+                                <label class="form-label-vesta">Notas / Preguntas para el Asesor</label>
+                                <textarea name="notas" rows="3" class="form-control form-control-vesta" placeholder="Indica detalles adicionales de tu disponibilidad..."></textarea>
                             </div>
                         </c:otherwise>
                     </c:choose>
@@ -177,7 +177,7 @@
                 <div class="modal-footer border-0 pt-0">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
                     <c:if test="${not empty sessionScope.usuarioLogueado}">
-                        <button type="submit" class="btn btn-sora-accent">Confirmar Agendamiento</button>
+                        <button type="submit" class="btn btn-vesta-accent">Confirmar Agendamiento</button>
                     </c:if>
                 </div>
             </form>
@@ -204,19 +204,19 @@
                         </c:when>
                         <c:otherwise>
                             <div class="mb-3">
-                                <label class="form-label-sora">Tipo de Operación</label>
-                                <select name="tipo" class="form-select form-select-sora" required>
+                                <label class="form-label-vesta">Tipo de Operación</label>
+                                <select name="tipo" class="form-select form-select-vesta" required>
                                     <option value="compra" ${propiedad.tipoOperacion == 'venta' ? 'selected' : ''}>Solicitud de Compra</option>
                                     <option value="arriendo" ${propiedad.tipoOperacion == 'arriendo' ? 'selected' : ''}>Solicitud de Arrendamiento</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label-sora">Documento de Soporte (Nombre de Archivo PDF/Doc)</label>
-                                <input type="text" name="nombreDocumento" class="form-control form-control-sora" placeholder="Ej: cedula_cliente.pdf" required>
+                                <label class="form-label-vesta">Documento de Soporte (Nombre de Archivo PDF/Doc)</label>
+                                <input type="text" name="nombreDocumento" class="form-control form-control-vesta" placeholder="Ej: cedula_cliente.pdf" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label-sora">Comentarios / Observaciones</label>
-                                <textarea name="comentarios" rows="3" class="form-control form-control-sora" placeholder="Escribe tu propuesta o información relevante para la inmobiliaria..."></textarea>
+                                <label class="form-label-vesta">Comentarios / Observaciones</label>
+                                <textarea name="comentarios" rows="3" class="form-control form-control-vesta" placeholder="Escribe tu propuesta o información relevante para la inmobiliaria..."></textarea>
                             </div>
                         </c:otherwise>
                     </c:choose>
@@ -224,7 +224,7 @@
                 <div class="modal-footer border-0 pt-0">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
                     <c:if test="${not empty sessionScope.usuarioLogueado}">
-                        <button type="submit" class="btn btn-sora-primary">Enviar Solicitud</button>
+                        <button type="submit" class="btn btn-vesta-primary">Enviar Solicitud</button>
                     </c:if>
                 </div>
             </form>

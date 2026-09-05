@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- Footer Vesta -->
-<footer class="footer-sora">
+<footer class="footer-vesta">
     <div class="container">
         <div class="row g-4 pb-4 border-bottom border-secondary border-opacity-25">
             <div class="col-lg-4 col-md-6">
