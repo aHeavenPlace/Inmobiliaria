@@ -67,7 +67,9 @@
                                 <select name="tipoCuenta" class="form-select-vesta">
                                     <option value="cliente" selected>Cliente (Comprador o Arrendatario)</option>
                                     <option value="inmobiliaria">Agente / Inmobiliaria (Publicar inmuebles)</option>
+                                    <option value="admin">Administrador (Solo para primer acceso - Futura eliminación)</option>
                                 </select>
+                                <small class="text-muted">Nota: La opción Administrador es temporal para crear el primer usuario admin. Se eliminará en futuras versiones.</small>
                             </div>
                         </div>
 

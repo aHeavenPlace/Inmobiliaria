@@ -124,7 +124,7 @@ public class AuthServlet extends HttpServlet {
         String documento = request.getParameter("documento");
         String telefono = request.getParameter("telefono");
         String direccion = request.getParameter("direccion");
-        String tipoCuenta = request.getParameter("tipoCuenta"); // 'cliente' o 'inmobiliaria'
+        String tipoCuenta = request.getParameter("tipoCuenta"); // 'cliente', 'inmobiliaria' o 'admin'
 
         if (correo == null || correo.isBlank() || password == null || password.isBlank() ||
             nombres == null || nombres.isBlank() || apellidos == null || apellidos.isBlank()) {
@@ -149,6 +149,7 @@ public class AuthServlet extends HttpServlet {
         try {
             Usuario nuevoUsuario = new Usuario();
             nuevoUsuario.setCorreo(correo.trim().toLowerCase());
+            // Usar BCrypt para TODOS los usuarios incluyendo admin para evitar problemas de hash
             nuevoUsuario.setPasswordHash(BCryptUtil.hashPassword(password));
 
             Perfil nuevoPerfil = new Perfil();
@@ -158,7 +159,15 @@ public class AuthServlet extends HttpServlet {
             nuevoPerfil.setTelefono(telefono != null ? telefono.trim() : "");
             nuevoPerfil.setDireccion(direccion != null ? direccion.trim() : "");
 
-            int idRol = "inmobiliaria".equalsIgnoreCase(tipoCuenta) ? 2 : 3; // 2: Inmobiliaria, 3: Cliente
+            // Asignar rol según tipo de cuenta: 1: Admin, 2: Inmobiliaria, 3: Cliente
+            int idRol;
+            if ("admin".equalsIgnoreCase(tipoCuenta)) {
+                idRol = 1; // Rol de administrador
+            } else if ("inmobiliaria".equalsIgnoreCase(tipoCuenta)) {
+                idRol = 2; // Rol de inmobiliaria
+            } else {
+                idRol = 3; // Rol de cliente (por defecto)
+            }
 
             Usuario usuarioCreado = usuarioDAO.registrar(nuevoUsuario, nuevoPerfil, idRol);
 
@@ -173,7 +182,10 @@ public class AuthServlet extends HttpServlet {
             // Auditoría
             auditoriaDAO.registrar(usuarioCreado.getIdUsuario(), "REGISTRO", "usuario", usuarioCreado.getIdUsuario(), request.getRemoteAddr());
 
-            if (usuarioCreado.hasRole("inmobiliaria")) {
+            // Redirección según el rol del usuario creado
+            if (usuarioCreado.hasRole("admin")) {
+                response.sendRedirect(request.getContextPath() + "/admin/dashboard?registro=ok");
+            } else if (usuarioCreado.hasRole("inmobiliaria")) {
                 response.sendRedirect(request.getContextPath() + "/inmobiliaria/dashboard?registro=ok");
             } else {
                 response.sendRedirect(request.getContextPath() + "/cliente/dashboard?registro=ok");
