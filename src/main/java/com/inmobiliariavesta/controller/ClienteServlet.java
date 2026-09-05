@@ -227,7 +227,7 @@ public class ClienteServlet extends HttpServlet {
     }
 
     private void procesarActualizarPerfil(HttpServletRequest request, HttpServletResponse response, Usuario usuario) 
-            throws IOException {
+            throws IOException, ServletException {
         String nombres = request.getParameter("nombres");
         String apellidos = request.getParameter("apellidos");
         String documento = request.getParameter("documento");
