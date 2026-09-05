@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <jsp:include page="/WEB-INF/views/components/header.jsp">
     <jsp:param name="pageTitle" value="Usuarios & Roles | Inmobiliaria Vesta"/>
 </jsp:include>
@@ -58,7 +59,23 @@
                             <tr>
                                 <td>
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="https://i.pravatar.cc/36?u=${u.idUsuario}" class="rounded-circle" width="36" height="36">
+                                        <c:choose>
+                                            <c:when test="${not empty u.perfil and not empty u.perfil.fotoUrl}">
+                                                <img src="${u.perfil.fotoUrl}" class="rounded-circle" width="36" height="36" alt="Foto de perfil">
+                                            </c:when>
+                                            <c:otherwise>
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style="width: 36px; height: 36px; font-size: 14px;">
+                                                    <c:choose>
+                                                        <c:when test="${not empty u.perfil}">
+                                                            ${fn:substring(u.perfil.nombres, 0, 1)}${fn:substring(u.perfil.apellidos, 0, 1)}
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            ${fn:substring(u.correo, 0, 1)}
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </div>
+                                            </c:otherwise>
+                                        </c:choose>
                                         <div>
                                             <strong class="text-dark d-block">
                                                 <c:choose>
@@ -98,9 +115,10 @@
                                             <ul class="dropdown-menu shadow border-0">
                                                 <c:forEach var="rol" items="${roles}">
                                                     <li>
-                                                        <form action="${pageContext.request.contextPath}/admin/asignar-rol" method="POST">
+                                                        <form action="${pageContext.request.contextPath}/admin/usuario-rol" method="POST">
                                                             <input type="hidden" name="idUsuario" value="${u.idUsuario}">
                                                             <input type="hidden" name="idRol" value="${rol.idRol}">
+                                                            <input type="hidden" name="accion" value="asignar">
                                                             <button type="submit" class="dropdown-item small">
                                                                 <i class="bi bi-check-lg me-1"></i> Asignar rol: ${rol.nombre}
                                                             </button>
