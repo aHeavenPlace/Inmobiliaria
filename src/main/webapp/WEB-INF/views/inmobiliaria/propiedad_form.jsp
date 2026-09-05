@@ -26,7 +26,7 @@
         </c:if>
 
         <div class="bg-white p-4 p-md-5 rounded-4 border border-light shadow-sm">
-            <form action="${pageContext.request.contextPath}/inmobiliaria/${not empty propiedad ? 'propiedad-editar' : 'propiedad-nueva'}" method="POST">
+            <form action="${pageContext.request.contextPath}/inmobiliaria/${not empty propiedad ? 'propiedad-editar' : 'propiedad-nueva'}" method="POST" enctype="multipart/form-data">
                 <c:if test="${not empty propiedad}">
                     <input type="hidden" name="idPropiedad" value="${propiedad.idPropiedad}">
                 </c:if>
@@ -150,11 +150,23 @@
 
                     <!-- Galería de Fotos -->
                     <div class="col-12 mt-4">
-                        <h5 class="fw-bold text-primary pb-2 border-bottom"><i class="bi bi-images me-2"></i> 4. Galería de Imágenes (URLs)</h5>
-                        <label class="form-label-vesta">URLs de Imágenes (una por línea o separadas por coma)</label>
-                        <textarea name="imagenesUrls" rows="3" class="form-control form-control-vesta" 
-                                  placeholder="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&#10;https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800"></textarea>
-                        <small class="text-muted">Si se deja vacío, el sistema asignará fotos arquitectónicas de alta definición por defecto.</small>
+                        <h5 class="fw-bold text-primary pb-2 border-bottom"><i class="bi bi-images me-2"></i> 4. Galería de Imágenes</h5>
+                        
+                        <div class="mb-3">
+                            <label class="form-label-vesta">Subir imágenes desde tu computador</label>
+                            <input type="file" name="imagenesFiles" class="form-control form-control-vesta" 
+                                   accept="image/*" multiple onchange="previewImages(this)">
+                            <small class="text-muted">Puedes seleccionar múltiples archivos (JPG, PNG, GIF, WEBP). Máximo 10MB por archivo.</small>
+                            
+                            <div id="imagePreview" class="row g-2 mt-2"></div>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <label class="form-label-vesta">O URLs de imágenes (una por línea o separadas por coma)</label>
+                            <textarea name="imagenesUrls" rows="3" class="form-control form-control-vesta" 
+                                      placeholder="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&#10;https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800">${propiedad != null and not empty propiedad.imagenes ? propiedad.imagenes : ''}</textarea>
+                            <small class="text-muted">Si no subes imágenes ni pones URLs, el sistema asignará fotos arquitectónicas por defecto.</small>
+                        </div>
                     </div>
                 </div>
 
@@ -168,5 +180,32 @@
         </div>
     </div>
 </div>
+
+<script>
+function previewImages(input) {
+    const preview = document.getElementById('imagePreview');
+    preview.innerHTML = '';
+    
+    if (input.files) {
+        Array.from(input.files).forEach((file, index) => {
+            if (!file.type.startsWith('image/')) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const col = document.createElement('div');
+                col.className = 'col-3';
+                col.innerHTML = `
+                    <div class="position-relative">
+                        <img src="${e.target.result}" class="img-fluid rounded border" style="height: 80px; width: 100%; object-fit: cover;">
+                        <span class="badge bg-primary position-absolute top-0 start-0">${index + 1}</span>
+                    </div>
+                `;
+                preview.appendChild(col);
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+}
+</script>
 
 <jsp:include page="/WEB-INF/views/components/footer.jsp"/>

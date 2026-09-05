@@ -13,15 +13,19 @@ import com.inmobiliariavesta.model.Cita;
 import com.inmobiliariavesta.model.Propiedad;
 import com.inmobiliariavesta.model.Solicitud;
 import com.inmobiliariavesta.model.Usuario;
+import com.inmobiliariavesta.util.FileUploadUtil;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.Part;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,6 +43,11 @@ import java.util.Map;
     "/inmobiliaria/solicitud-estado",
     "/inmobiliaria/reportes"
 })
+@MultipartConfig(
+    fileSizeThreshold = 1024 * 1024, // 1 MB
+    maxFileSize = 10 * 1024 * 1024,  // 10 MB
+    maxRequestSize = 50 * 1024 * 1024 // 50 MB (para múltiples imágenes)
+)
 public class InmobiliariaServlet extends HttpServlet {
 
     private PropiedadDAO propiedadDAO = new PropiedadDAO();
@@ -196,15 +205,34 @@ public class InmobiliariaServlet extends HttpServlet {
                 for (String c : caracs) idCaracs.add(Integer.parseInt(c));
             }
 
-            // URLs de imágenes
-            String urlsStr = request.getParameter("imagenesUrls");
+            // Manejar subida de imágenes
             List<String> urls = new ArrayList<>();
-            if (urlsStr != null && !urlsStr.isBlank()) {
-                String[] lines = urlsStr.split("[\\r\\n,]+");
-                for (String u : lines) {
-                    if (!u.trim().isBlank()) urls.add(u.trim());
+            Part[] imageParts = request.getParts("imagenesFiles");
+            
+            if (imageParts != null && imageParts.length > 0) {
+                String uploadPath = getServletContext().getRealPath("") + "/uploads/propiedades";
+                for (Part part : imageParts) {
+                    if (part.getSize() > 0) {
+                        String fileName = FileUploadUtil.saveImage(part, uploadPath);
+                        if (fileName != null) {
+                            urls.add("/uploads/propiedades/" + fileName);
+                        }
+                    }
                 }
             }
+            
+            // Si no se subieron imágenes, verificar URLs manuales
+            if (urls.isEmpty()) {
+                String urlsStr = request.getParameter("imagenesUrls");
+                if (urlsStr != null && !urlsStr.isBlank()) {
+                    String[] lines = urlsStr.split("[\\r\\n,]+");
+                    for (String u : lines) {
+                        if (!u.trim().isBlank()) urls.add(u.trim());
+                    }
+                }
+            }
+            
+            // Si aún está vacío, usar imagen por defecto
             if (urls.isEmpty()) {
                 urls.add("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800");
             }
@@ -213,8 +241,10 @@ public class InmobiliariaServlet extends HttpServlet {
             auditoriaDAO.registrar(usuario.getIdUsuario(), "INSERT", "propiedad", idProp, request.getRemoteAddr());
 
             response.sendRedirect(request.getContextPath() + "/inmobiliaria/propiedades?msg=propiedad_creada");
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             response.sendRedirect(request.getContextPath() + "/inmobiliaria/propiedad-nueva?error=" + e.getMessage());
+        } catch (Exception e) {
+            response.sendRedirect(request.getContextPath() + "/inmobiliaria/propiedad-nueva?error=Error al crear la propiedad: " + e.getMessage());
         }
     }
 

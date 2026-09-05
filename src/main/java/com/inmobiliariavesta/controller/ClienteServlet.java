@@ -14,14 +14,18 @@ import com.inmobiliariavesta.model.Perfil;
 import com.inmobiliariavesta.model.Propiedad;
 import com.inmobiliariavesta.model.Solicitud;
 import com.inmobiliariavesta.model.Usuario;
+import com.inmobiliariavesta.util.FileUploadUtil;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.Part;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -40,6 +44,11 @@ import java.util.Map;
     "/cliente/radicar-solicitud",
     "/cliente/perfil"
 })
+@MultipartConfig(
+    fileSizeThreshold = 1024 * 1024, // 1 MB
+    maxFileSize = 10 * 1024 * 1024,  // 10 MB
+    maxRequestSize = 15 * 1024 * 1024 // 15 MB
+)
 public class ClienteServlet extends HttpServlet {
 
     private PropiedadDAO propiedadDAO = new PropiedadDAO();
@@ -224,6 +233,23 @@ public class ClienteServlet extends HttpServlet {
         String documento = request.getParameter("documento");
         String telefono = request.getParameter("telefono");
         String direccion = request.getParameter("direccion");
+        
+        // Manejar subida de foto de perfil
+        Part fotoPart = request.getPart("fotoPerfil");
+        String fotoUrl = null;
+        
+        if (fotoPart != null && fotoPart.getSize() > 0) {
+            try {
+                String uploadPath = getServletContext().getRealPath("") + "/uploads/perfiles";
+                fotoUrl = FileUploadUtil.saveImage(fotoPart, uploadPath);
+            } catch (IllegalArgumentException e) {
+                response.sendRedirect(request.getContextPath() + "/cliente/perfil?error=" + e.getMessage());
+                return;
+            } catch (Exception e) {
+                // Si falla la subida, continuamos sin actualizar la foto
+                fotoUrl = null;
+            }
+        }
 
         Perfil p = new Perfil();
         p.setIdUsuario(usuario.getIdUsuario());
@@ -232,7 +258,13 @@ public class ClienteServlet extends HttpServlet {
         p.setDocumento(documento);
         p.setTelefono(telefono);
         p.setDireccion(direccion);
-        p.setFotoUrl(usuario.getPerfil() != null ? usuario.getPerfil().getFotoUrl() : "https://i.pravatar.cc/150?u=" + usuario.getIdUsuario());
+        
+        // Si se subió una nueva foto, la usamos; si no, mantenemos la existente
+        if (fotoUrl != null) {
+            p.setFotoUrl(fotoUrl);
+        } else if (usuario.getPerfil() != null) {
+            p.setFotoUrl(usuario.getPerfil().getFotoUrl());
+        }
 
         perfilDAO.actualizar(p);
         usuario.setPerfil(p);
