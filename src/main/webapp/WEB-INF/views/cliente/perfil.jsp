@@ -38,7 +38,7 @@
                         <div class="text-center mb-4">
                             <div class="position-relative d-inline-block">
                                 <c:choose>
-                                    <c:when test="${not empty perfil.fotoUrl and not perfil.fotoUrl.startsWith('https://i.pravatar')}">
+                                    <c:when test="${not empty perfil.fotoUrl}">
                                         <img src="${pageContext.request.contextPath}/uploads/perfiles/${perfil.fotoUrl}" 
                                              alt="Foto de perfil" class="rounded-circle border border-3 border-primary" 
                                              style="width: 150px; height: 150px; object-fit: cover;">

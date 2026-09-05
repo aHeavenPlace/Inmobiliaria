@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -61,8 +62,8 @@
                     <c:when test="${not empty sessionScope.usuarioLogueado}">
                         <div class="dropdown">
                             <button class="btn btn-vesta-outline dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown">
-                                <img src="${not empty sessionScope.usuarioLogueado.perfil.fotoUrl ? sessionScope.usuarioLogueado.perfil.fotoUrl : 'https://i.pravatar.cc/150?u=' + sessionScope.usuarioLogueado.idUsuario}" 
-                                     alt="Avatar" class="rounded-circle" width="28" height="28" style="object-fit: cover;">
+                                <c:choose><c:when test="${not empty sessionScope.usuarioLogueado.perfil.fotoUrl}"><img src="${pageContext.request.contextPath}/uploads/perfiles/${sessionScope.usuarioLogueado.perfil.fotoUrl}" 
+                                     alt="Avatar" class="rounded-circle" width="28" height="28" style="object-fit: cover;"></c:when><c:otherwise><div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style="width: 28px; height: 28px; font-size: 0.9rem;">${not empty sessionScope.nombreUsuario ? fn:substring(sessionScope.nombreUsuario, 0, 1) : 'U'}</div></c:otherwise></c:choose>
                                 <span>${sessionScope.nombreUsuario}</span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2" style="border-radius: var(--radius-md);">

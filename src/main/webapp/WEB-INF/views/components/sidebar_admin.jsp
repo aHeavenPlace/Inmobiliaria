@@ -1,9 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <div class="dashboard-sidebar">
     <div class="sidebar-user">
-        <img src="${not empty sessionScope.usuarioLogueado.perfil.fotoUrl ? sessionScope.usuarioLogueado.perfil.fotoUrl : 'https://i.pravatar.cc/150?u=' + sessionScope.usuarioLogueado.idUsuario}" 
-             alt="Avatar" class="sidebar-avatar">
+        <c:choose>
+            <c:when test="${not empty sessionScope.usuarioLogueado.perfil.fotoUrl}">
+                <img src="${pageContext.request.contextPath}/uploads/perfiles/${sessionScope.usuarioLogueado.perfil.fotoUrl}"
+                     alt="Avatar" class="sidebar-avatar">
+            </c:when>
+            <c:otherwise>
+                <div class="sidebar-avatar bg-primary text-white d-flex align-items-center justify-content-center fw-bold"
+                     style="font-size: 1.5rem;">
+                    ${not empty sessionScope.nombreUsuario ? fn:substring(sessionScope.nombreUsuario, 0, 1) : 'U'}
+                </div>
+            </c:otherwise>
+        </c:choose>
         <div class="overflow-hidden">
             <h6 class="fw-bold mb-0 text-truncate">${sessionScope.nombreUsuario}</h6>
             <small class="text-muted d-block text-truncate">Super Administrador</small>

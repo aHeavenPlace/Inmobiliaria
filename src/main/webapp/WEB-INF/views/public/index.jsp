@@ -206,7 +206,7 @@
                         "El proceso de arrendar mi apartamento fue impecable. Pude radicar mis documentos en línea y en 48 horas ya tenía la aprobación."
                     </p>
                     <div class="d-flex align-items-center gap-3 pt-3" style="border-top: 1px solid var(--border-subtle);">
-                        <img src="https://i.pravatar.cc/150?u=juan" alt="Juan Pérez" class="rounded-circle" width="44" height="44" style="object-fit: cover; border: 2px solid var(--color-accent-light);">
+                        <img src="#" alt="Juan Pérez" class="rounded-circle" width="44" height="44" style="object-fit: cover; border: 2px solid var(--color-accent-light);">
                         <div>
                             <h6 class="fw-bold mb-0" style="color: var(--color-primary);">Juan Pérez</h6>
                             <small style="color: var(--text-muted);">Comprador en Bucaramanga</small>
@@ -224,7 +224,7 @@
                         "Excelente plataforma. La galería fotográfica es fiel a la realidad y el agente respondió todas nuestras inquietudes."
                     </p>
                     <div class="d-flex align-items-center gap-3 pt-3" style="border-top: 1px solid var(--border-subtle);">
-                        <img src="https://i.pravatar.cc/150?u=ana" alt="Ana López" class="rounded-circle" width="44" height="44" style="object-fit: cover; border: 2px solid var(--color-accent-light);">
+                        <img src="#" alt="Ana López" class="rounded-circle" width="44" height="44" style="object-fit: cover; border: 2px solid var(--color-accent-light);">
                         <div>
                             <h6 class="fw-bold mb-0" style="color: var(--color-primary);">Ana López</h6>
                             <small style="color: var(--text-muted);">Inversionista en Floridablanca</small>
@@ -242,7 +242,7 @@
                         "Como inmobiliaria aliada, la gestión de inmuebles y citas ha multiplicado la productividad de nuestro equipo."
                     </p>
                     <div class="d-flex align-items-center gap-3 pt-3" style="border-top: 1px solid var(--border-subtle);">
-                        <img src="https://i.pravatar.cc/150?u=carlos" alt="Carlos Ramírez" class="rounded-circle" width="44" height="44" style="object-fit: cover; border: 2px solid var(--color-accent-light);">
+                        <img src="#" alt="Carlos Ramírez" class="rounded-circle" width="44" height="44" style="object-fit: cover; border: 2px solid var(--color-accent-light);">
                         <div>
                             <h6 class="fw-bold mb-0" style="color: var(--color-primary);">Carlos Ramírez</h6>
                             <small style="color: var(--text-muted);">Agente Inmobiliario</small>
