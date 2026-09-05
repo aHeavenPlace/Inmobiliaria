@@ -28,6 +28,7 @@ import java.math.BigDecimal;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -207,9 +208,18 @@ public class InmobiliariaServlet extends HttpServlet {
 
             // Manejar subida de imágenes
             List<String> urls = new ArrayList<>();
-            Part[] imageParts = request.getParts("imagenesFiles");
             
-            if (imageParts != null && imageParts.length > 0) {
+            // Obtener todas las partes del request multipart
+            Collection<Part> allParts = request.getParts();
+            List<Part> imageParts = new ArrayList<>();
+            
+            for (Part part : allParts) {
+                if ("imagenesFiles".equals(part.getName())) {
+                    imageParts.add(part);
+                }
+            }
+            
+            if (!imageParts.isEmpty()) {
                 String uploadPath = getServletContext().getRealPath("") + "/uploads/propiedades";
                 for (Part part : imageParts) {
                     if (part.getSize() > 0) {
