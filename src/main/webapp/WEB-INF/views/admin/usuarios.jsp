@@ -60,7 +60,16 @@
                                     <div class="d-flex align-items-center gap-2">
                                         <img src="https://i.pravatar.cc/36?u=${u.idUsuario}" class="rounded-circle" width="36" height="36">
                                         <div>
-                                            <strong class="text-dark d-block">${u.perfil.nombres} ${u.perfil.apellidos}</strong>
+                                            <strong class="text-dark d-block">
+                                                <c:choose>
+                                                    <c:when test="${not empty u.perfil}">
+                                                        ${u.perfil.nombres} ${u.perfil.apellidos}
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        Usuario sin perfil
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </strong>
                                             <small class="text-muted">ID: ${u.idUsuario}</small>
                                         </div>
                                     </div>
