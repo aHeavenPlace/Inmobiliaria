@@ -68,4 +68,12 @@ public class Usuario implements Serializable {
         if (hasRole("cliente")) return "cliente";
         return "visitante";
     }
+
+    /**
+     * Método auxiliar para compatibilidad con JSP que espera 'activo'
+     * Retorna true si el estado es 'activo'
+     */
+    public boolean isActivo() {
+        return "activo".equalsIgnoreCase(this.estado);
+    }
 }
